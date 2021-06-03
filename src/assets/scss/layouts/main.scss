@@ -1,0 +1,178 @@
+html,
+body{
+	background: #fff;
+	font-family: $font-site;
+	@include font(normal, normal, 10px, 1.67, $color-text);
+	box-sizing:border-box;
+	height:100%;
+}
+
+body{font-size: 1.8rem;}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+img{max-width: 100%;}
+
+a{
+	color: $color-orange;
+	text-decoration: underline;
+}
+
+a:hover{text-decoration: none;}
+
+p{
+	padding: 0;
+	margin-bottom: 2rem;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5
+{
+	line-height: 1.4;
+}
+
+h1,.h1{
+	font-size: 3.6rem;
+	font-weight: 300;
+	color: #000;
+	margin-bottom: 4rem;
+}
+
+h2,.h2{
+	font-size: 3rem;
+	margin-bottom: 2rem;
+}
+
+h3,.h3{
+	font-size: 2.4rem;
+	margin-bottom: 1rem;
+}
+
+h4,.h4{
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+h5,.h5{
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	margin: 0 auto;
+}
+
+main{
+	flex: 1 1 auto;
+	padding-bottom: 76px;
+	width: 100%;
+}
+
+.last-elem{margin-bottom: -76px;}
+
+.btn,
+input[type="submit"].btn,
+button.btn{
+	display: inline-block;
+	height: 6.8rem;
+	min-width: 200px;
+	background: $color-orange;
+	border: 2px solid $color-orange;
+	border-radius: 2px;
+	@include font(normal, bold, 2rem, 6.4rem, #fff);
+	text-decoration: none;
+	text-align: center;
+	padding: 0 30px;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+	position: relative;
+}
+
+.btn:hover,
+input[type="submit"].btn:hover,
+button.btn:hover{
+	background: transparent;
+	color: $color-text;
+}
+
+.btn_border,
+input[type="submit"].btn_border,
+button.btn_border{
+	background: transparent;
+	color: #000;
+
+	&::before,
+	&::after {
+		box-sizing: inherit;
+		content: '';
+		position: absolute;
+		border: 2px solid transparent;
+		width: 0;
+		height: 0;
+	}
+
+	&::before {
+		top: -2px;
+		left: -2px;
+	}
+
+	&::after {
+		bottom: -2px;
+		right: -2px;
+	}
+  
+  &:hover{color: $color-text;}
+
+  &:hover::before,
+  &:hover::after {
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+
+  &:hover::before {
+    border-top-color: #000; // Make borders visible
+    border-right-color: #000;
+    transition:
+      width 0.2s ease-out, // Width expands first
+      height 0.2s ease-out 0.2s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: #000; // Make borders visible
+    border-left-color: #000;
+    transition:
+      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+      width 0.2s ease-out 0.5s, // And then exanding width
+      height 0.2s ease-out 0.75s; // And finally height
+  }
+}
+
+.code{
+	background-color: #f7f7f7;
+	border: 1px solid #e1e1e8;
+	color: #d14;
+	padding: 1px 4px;
+	display: inline-block;
+	font-family: monospace, arial;
+	border-radius: 3px;
+}
+
+.text-left{text-align: left !important;}
+.text-center{text-align: center !important;}
+.text-right{text-align: right !important;}
+.text-justify{text-align: justify !important;}
+.text-uppercase{text-transform: uppercase !important;}
+.text-bold {font-weight: 700 !important;}
