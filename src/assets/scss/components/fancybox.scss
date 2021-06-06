@@ -1,0 +1,20 @@
+/*-------------- fancybox -----------------*/
+.fancybox-slide--html .fancybox-close-small{padding: 4px;}
+
+.fancybox-content{
+	padding: 60px;
+	border-radius: 20px;
+	box-shadow: 0px 26px 46px 0px rgba(0,0,0,0.1);
+}
+
+.fancybox-is-open .fancybox-bg{
+	background: rgba(245,245,245,0.5);
+	opacity: 1;
+}
+
+.fancybox-button svg path{
+	fill: #adadad;
+	transition: fill 0.2s ease 0s;
+}
+
+.fancybox-button:hover svg path{fill: #000;}

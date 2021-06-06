@@ -1,0 +1,69 @@
+.footer{
+	border-top: 1px solid #ebebeb;
+	padding-top: 73px;
+}
+
+.footer-top{
+	&__logo{margin-top: 6px;}
+
+	&__slogan{
+		max-width: 150px;
+		@include font(normal, normal, 1.6rem, 1.625, $color-text);
+		margin-top: 43px;
+	}
+
+	.social{
+		margin-top: 30px;
+		margin-left: -20px;
+	}
+
+	.app{margin-top: 43px;}
+
+	&__title{
+		@include font(normal, 300, 2.6rem, 1.2, #000);
+		margin-bottom: 23px;
+	}
+}
+
+.app{
+	&__item:not(:last-child){margin-bottom: 10px;}
+}
+
+.footer-menu{
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&__item:not(:last-child){margin-bottom: 10px;}
+
+	&__link{
+		@include font(normal, normal, 1.6rem, 1.2, $color-grey);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-orange;}
+}
+
+.footer-bottom{
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include font(normal, normal, 1.4rem, 1.2, $color-grey);
+		padding: 40px 0;
+	}
+
+	&__copyright{margin-right: 30px;}
+
+	&__link{
+		a{
+			color: $color-grey;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-orange;}
+	}
+}

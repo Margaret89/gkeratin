@@ -1,4 +1,104 @@
 footer.footer
-	.container
-		.row
-			.col-12 footer
+	.footer-top
+		.container
+			.row
+				.col-3
+					.footer-top__logo
+						a(href="#")
+							img(src="assets/img/logo.png", alt="")
+
+					.footer-top__slogan Официальный дистрибьютор в России с 2011 года
+
+					.social
+						a(href="#").social__item
+							+svg('ic-instagram','ic-instagram', '20', '20')
+
+						a(href="#").social__item
+							+svg('ic-vk','ic-vk', '20', '12')
+
+						a(href="#").social__item
+							+svg('ic-fb','ic-fb', '12', '20')
+
+					.app
+						.app__item
+							a(href="#")
+								img(src="assets/img/google-play.png", alt="")
+
+						.app__item
+							a(href="#")
+								img(src="assets/img/appstore.png", alt="")
+
+				.col-3
+					.footer-top__title Меню
+
+					ul.footer-menu
+						-
+							var list=[
+								{text:'О компании'},
+								{text:'Обучение'},
+								{text:'Дитрибьюторам'},
+								{text:'Салонам'},
+								{text:'Новости'},
+								{text:'Контакты'},
+							]
+						each item in list
+							li.footer-menu__item
+								a(href="#").footer-menu__link= item.text
+
+				.col-3
+					.footer-top__title Продукция
+
+					ul.footer-menu
+						-
+							var list=[
+								{text:'Домашний уход'},
+								{text:'Кератиновые составы'},
+								{text:'Стайлинг'},
+								{text:'Системы окрашивания'},
+								{text:'Приборы и аксессуары'},
+								{text:'Салонные процедуры'},
+								{text:'Уход'},
+							]
+						each item in list
+							li.footer-menu__item
+								a(href="#").footer-menu__link= item.text
+
+				.col-3.d-flex.justify-content-end
+					a.btn.btn_border(href='#') Запросить прайс-лист
+
+	.footer-bottom
+		.container
+			.row
+				.col-12
+					.footer-bottom__content
+						.footer-bottom__copyright © 2013-2021 Компания ООО "ГКератин"
+						.footer-bottom__link
+							a(href="#") Политика конфиденциальности 
+							|| 
+							a(href="#") Пользовательское соглашение
+
+.move-up.js-move-up
+	+svg('ic-arrow-up','ic-arrow-up ic-stroke', '20', '10')
+
+#feadback-form(style='display: none;')
+	.popup-form
+		form.form-site
+			.form-site__title Заказать обратный звонок
+
+			.form-site__item
+				input(type="text", placeholder="Ваше имя")
+
+			.form-site__item
+				input.js-phone(type="text", placeholder="Ваш телефон")
+
+			.form-site__polit
+				.input-check
+					input#polit(type='checkbox', checked="checked")
+					label.input-check__label(for='polit')
+						span.input-check__mark
+							+svg('ic-tick','ic-tick', '10', '8')
+						span.input-check__text Я согласен на обработку 
+							a(href="#") персональных данных
+
+			.form-site__btn
+				button.btn.btn_border Отправить

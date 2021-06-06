@@ -1,0 +1,52 @@
+/*-------------- input-check -----------------*/
+.input-check{
+	&__label{
+		display: inline-flex;
+		vertical-align: top;
+		cursor: pointer;
+		@include font(normal, normal, 1.4rem, 1.2, #000);
+		margin: 0;
+	}
+
+	input[type=checkbox]{display: none;}
+
+	&__mark{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		flex: 0 0 18px;
+		width: 18px;
+		height: 18px;
+		border: 1px solid $color-orange;
+		border-radius: 3px;
+		outline: none;
+		background: #fff;
+		position: relative;
+
+		.icon{
+			display: none;
+			fill: #fff;
+			position: absolute;
+			@include top-center;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+
+	&__text{
+		margin-left: 10px;
+
+		a{
+			color: $color-grey;
+			transition: color 0.2s ease 0s;
+			text-decoration: none;
+		}
+
+		a:hover{color: $color-orange;}
+	}
+
+	input[type=checkbox]:checked + &__label &__mark{background: $color-orange;}
+	input[type=checkbox]:checked + &__label &__mark .icon{display: inline-block;}
+}
