@@ -1,0 +1,214 @@
+/*-------------- main-menu -----------------*/
+.main-menu{
+	&__list,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__list{
+		display: flex;
+		justify-content: space-between;
+		justify-content: center;
+		position: relative;
+	}
+
+	&__link{
+		display: inline-block;
+		padding: 26px 28px;
+		position: relative;
+		@include font(normal, normal, 1.8rem, 1.2, #000);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link::after{
+		content: '';
+		display: none;
+		height: 4px;
+		width: 100%;
+		background: $color-orange;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__item{position: relative;}
+	&__item_no-pos{position: static;}
+
+	&__item.active &__link,
+	&__link:hover{
+		color: $color-grey;
+	}
+
+	&__item.active &__link::after,
+	&__link:hover::after{
+		display: inline-block;
+	}
+
+	&__sub{
+		display: none;
+		width: 200px;
+		background: #fff;
+		border: 1px solid #ebebeb;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+	}
+
+	&__sub-link{
+		display: block;
+		padding: 10px;
+		@include font(normal, normal, 1.4rem, 1.2, #000);
+		text-decoration: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__sub-link:hover,
+	&__sub-item.active &__sub-link{
+		background: $color-orange;
+		color: #fff;
+	}
+
+	&__item:hover &__sub{display: block;}
+
+	&__item:hover .main-menu-cat-wrap{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.main-menu-cat-wrap{
+	display: none;
+	background: #fff;
+	padding: 50px 45px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 100;
+}
+
+.main-menu-cat{
+	display: flex;
+	flex-wrap: wrap;
+	width: calc(100% - 400px);
+
+	&__sect{
+		width: calc(50% - 30px);
+		margin: 0 15px 15px;
+	}
+
+	&__title{
+		@include font(normal, 300, 2.6rem, 1.4, #000);
+		margin-bottom: 34px;
+	}
+
+	&__list,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__list{padding-left: 20px;}
+
+	&__link{
+		@include font(normal, bold, 2rem, 1.2, #000);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-orange;}
+	&__sub{margin-top: 10px;}
+	&__item:not(:last-child){margin-bottom: 35px;}
+	&__sub-item:not(:last-child){margin-bottom: 2px;}
+
+	&__sub-link{
+		@include font(normal, normal, 1.6rem, 1.2, #757575);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__sub-link:hover{color: $color-orange;}
+}
+
+.product-menu{
+	width: 275px;
+
+	&__img{
+		padding-bottom: 103%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		position: relative;
+		margin-bottom: 20px;
+	}
+
+	&__label{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		background: url(../img/bg-tag-green.png);
+		background-size: contain;
+		@include font(normal, bold, 1.2rem, 1.2, #fff);
+		text-transform: uppercase;
+		position: absolute;
+		top: 22px;
+		left: 0;
+	}
+
+	&__content{padding: 0 20px;}
+
+	&__name{
+		@include font(normal, normal, 1.8rem, 1.4, #000);
+
+		a{
+			color: #000;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-orange;}
+	}
+
+	&__desc{
+		@include font(normal, normal, 1.6rem, 1.375, $color-grey);
+		margin-top: 12px;
+	}
+
+	&__btn{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 25px;
+
+		.btn_small{
+			height: 5.2rem;
+			width: calc(100% - 62px);
+			line-height: 4.8rem;
+		}
+	}
+
+	&__wish{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 52px;
+		height: 52px;
+		border: 2px solid $color-red;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: box-shadow 0.2s ease 0s;
+
+		.icon{
+			fill: $color-red;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__wish:hover{box-shadow: inset 0 -5.2rem 0 0 $color-red;}
+	&__wish:hover .icon{fill: #fff;}
+}

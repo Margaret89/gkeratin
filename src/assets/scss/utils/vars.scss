@@ -9,7 +9,8 @@ $font-site: 'TT Norms', Arial, sans-serif;
 $color-text: #424242;
 $color-grey: #757575;
 $color-orange: #ffa016;
-$color-dark-orange: #ee9003;
+$color-dark-orange: #db8400;
+$color-red: #fa465e;
 
 // Grid
 $grid-breakpoints: (
@@ -17,12 +18,12 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1230px
+  xl: 1260px
 ) !default;
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1170px
+  xl: 1200px
 ) !default;

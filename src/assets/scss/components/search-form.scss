@@ -1,0 +1,73 @@
+/*-------------- search-form -----------------*/
+.search-form{
+	position: relative;
+
+	&__btn{
+		cursor: pointer;
+
+		.icon{
+			fill: #adadad;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__btn:hover .icon{fill: $color-orange;}
+
+	&__field{
+		width: 0;
+		position: absolute;
+		@include top-center;
+		right: -15px;
+		overflow: hidden;
+		transition: width 0.2s ease 0s;
+
+		input[type="text"]{
+			display: block;
+			height: 6rem;
+			width: 100%;
+			font-family: $font-site;
+			@include font(normal, normal, 1.6rem, 5.8rem, $color-text);
+			padding: 0 23px;
+			border-radius: 5px;
+			border: 1px solid #dbdbdb;
+			background: #fff;
+			outline: 0;
+			margin: 0;
+			outline: 0;
+			box-shadow: none;
+			transition: border 0.2s ease 0s;
+		}
+	
+		input[type="text"]::placeholder{color: #999;}
+		input[type="text"]:focus{border-color: $color-orange;}
+	
+		input[type="submit"],
+		button{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 100%;
+			background: transparent;
+			border: 0;
+			outline: 0;
+			box-shadow: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+	
+			.icon{
+				fill: #000;
+				transition: fill 0.2s ease 0s;
+			}
+	
+			&:hover{
+				background: $color-orange;
+				.icon{fill: #fff;}
+			}
+		}
+	}
+
+	&.active &__field{width: 540px;}
+}

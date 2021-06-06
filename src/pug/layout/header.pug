@@ -1,4 +1,175 @@
 header.header
-	.container
-		.row
-			.col-12 header
+	.header-top
+		.container
+			.row
+				.col-12
+					.header-top__content
+						.header-top__info
+							a(href="#").header-top__logo
+								img(src="assets/img/logo.png", alt="")
+
+							.social
+								a(href="#").social__item
+									+svg('ic-instagram','ic-instagram', '20', '20')
+
+								a(href="#").social__item
+									+svg('ic-vk','ic-vk', '20', '12')
+
+								a(href="#").social__item
+									+svg('ic-fb','ic-fb', '12', '20')
+							
+							.header-top__contacts
+								span.header-top__phone
+									a(href="tel:+78005050984") 8 (800) 505 09 84
+								a(href="#").header-top__callback Заказать звонок
+
+						.header-top__action
+							.header-action
+								.header-action__item
+									.search-form.js-search-form
+										.search-form__btn.js-search-form-btn
+											+svg('ic-search','ic-search', '20', '20')
+
+										.search-form__field
+											input(type="text", placeholder="Введите название товара")
+											button(type="submit")
+												+svg('ic-search','ic-search', '20', '20')
+							
+								a(href="#").header-action__item
+									.header-action__icon
+										+svg('ic-like','ic-like', '20', '20')
+
+								a(href="#").header-action__item
+									.header-action__icon
+										+svg('ic-cart','ic-cart', '20', '18')
+										.header-action__num 0
+
+							.header-top__auth
+								a.btn.btn_border.btn_small(href='#') Войти
+	
+	navbar.header-nav
+		.container
+			.row
+				.col-12
+					nav.main-menu
+						ul.main-menu__list
+							-
+								var list=[
+									{
+										text:'О бренде',
+										sect:[
+											{text:'О нас'},
+											{text:'Записаться в салон'},
+											{text:'О Juvexin'},
+											{text:'История бренда'},
+											{text:'Кератин для волос'},
+											{text:'Наши преимущества'},
+											{text:'Кератиновое выпрямление'},
+											{text:'История кератина'},
+											{text:'Новости'},
+											{text:'Вакансии'},
+											{text:'Реквизиты'},
+										]
+									},
+									{text:'Каталог', status:'active', catalog:'true'},
+									{text:'Подкатегории'},
+									{text:'Категории'},
+									{text:'Обучение'},
+									{text:'Салонам'},
+									{text:'Дилерам'},
+									{text:'Контакты'},
+								]
+
+							each item in list
+								li.main-menu__item(class=item.status?'active':'', class=item.catalog?'main-menu__item_no-pos':'')
+									a(href="#").main-menu__link= item.text
+
+									if(item.sect)
+										ul.main-menu__sub
+											each sub in item.sect
+												li.main-menu__sub-item
+													a(href="#").main-menu__sub-link= sub.text
+
+									if(item.catalog)
+										.main-menu-cat-wrap
+											.main-menu-cat
+												-
+													var cat=[
+														{
+															title:'Домашняя серия',
+															list:[
+																{
+																	text:'Домашний уход',
+																	sub:[
+																		{text:'Шампуни и кондиционеры'},
+																		{text:'Маски c кератином'},
+																		{text:'Сыворотки'},
+																		{text:'Спреи'},
+																		{text:'Тонирующие продукты'},
+																		{text:'Стайлинг'},
+																		{text:'Наборы GKBox'},
+																		{text:'Подарочные карты'},
+																	]
+																},
+																{
+																	text:'Приборы и аксессуары для волос',
+																	sub:[
+																		{text:'Техника'},
+																		{text:'Расчески'},
+																		{text:'Аксессуары'},
+																	]
+																},
+															]
+														},
+														{
+															title:'Профессиональная серия',
+															list:[
+																{
+																	text:'Кератиновое выпрямление и восстановление',
+																	sub:[
+																		{text:'Классические кератиновые составы'},
+																		{text:'Составы на основе глиоксиловой кислоты'},
+																	]
+																},
+																{
+																	text:'Система окрашивания',
+																	sub:[
+																		{text:'Краситель Cream Color'},
+																		{text:'Осветляющие продукты'},
+																		{text:'Оксиды'},
+																		{text:'Защитная добавка'},
+																		{text:'Защита цвета'},
+																	]
+																},
+															]
+														}
+													]
+												each catsect in cat
+													.main-menu-cat__sect
+														.main-menu-cat__title= catsect.title
+														
+														ul.main-menu-cat__list
+															each catitem in catsect.list
+																li.main-menu-cat__item
+																	a(href="#").main-menu-cat__link= catitem.text
+
+																	ul.main-menu-cat__sub
+																		each catsub in catitem.sub
+																			li.main-menu-cat__sub-item
+																				a(href="#").main-menu-cat__sub-link= catsub.text
+
+											.product-menu
+												.product-menu__img(style="background-image: url(assets/img/product-menu.jpg);")
+													.product-menu__label new
+
+												.product-menu__content
+													.product-menu__name
+														a(href="#") GKbox "Кератиновый уход дома"
+
+													.product-menu__desc Набор предназначен для восстановления хрупких, повреждённых, лишенных блеска и плотности волос.
+
+													.product-menu__btn
+														a.btn.btn_border.btn_small(href='#') В корзину
+
+														.product-menu__wish
+															+svg('ic-like','ic-like', '20', '20')
