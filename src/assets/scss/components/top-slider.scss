@@ -1,0 +1,78 @@
+/*-------------- top-slider -----------------*/
+.top-slider{
+	background: #f5f5f5;
+	position: relative;
+	overflow: hidden;
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 1160px;
+		height: 1160px;
+		border: 350px solid $color-orange;
+		border-radius: 50%;
+		position: absolute;
+		@include top-center;
+		right: -218px;
+	}
+
+	&__list{display: none;}
+	&__list.slick-initialized{display: block;}
+
+	&__content{
+		display: flex;
+		align-items: center;
+		min-height: 680px;
+	}
+
+	&__info{
+		width: 330px;
+		padding: 30px 30px 30px 0;
+	}
+
+	&__label{
+		@include font(normal, normal, 2.2rem, 1.2, #000);
+		margin-bottom: 18px;
+	}
+
+	&__title{
+		@include font(normal, 300, 6rem, 1.2, #000);
+	}
+
+	&__tag{
+		@include font(normal, normal, 1.8rem, 1.2, $color-grey);
+		margin-top: 22px;
+	}
+
+	&__btn{margin-top: 55px;}
+
+	&__arr{
+		position: absolute;
+		@include top-center;
+		right: 0;
+
+		.slick-arrow:not(:last-child){margin-bottom: 60px;}
+	}
+
+	&__img{align-self: flex-end;}
+
+	.slick-arrow{
+		display: block;
+		font-size: 0;
+		text-decoration: none;
+		padding: 0;
+		margin: 0;
+		cursor: pointer;
+		background: transparent;
+		box-shadow: none;
+
+		.icon{
+			fill: #ccc;
+			transition: fill 0.2s ease 0s;
+		}
+
+		&:hover .icon{fill: #000;}
+	}
+
+	&__list.slick-vertical .slick-slide{border: none;}
+}

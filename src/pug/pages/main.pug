@@ -1,0 +1,207 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная';
+
+block content
+	section.top-slider.js-top-slider
+		.container
+			.row
+				.col-12
+					.top-slider__list.js-top-slider-list
+						-
+							var list=[
+								{label:'Тонирующие маски', title:'Bombshell Masques', img:'top-slide1.png'},
+								{label:'Тонирующие маски 2', title:'Bombshell Masques 2', img:'top-slide2.png'},
+								{label:'Тонирующие маски 3', title:'Bombshell Masques 3', img:'top-slide3.png'},
+							]
+						each item in list
+							.top-slider__item
+								.top-slider__content
+									.top-slider__info
+										.top-slider__label= item.label
+										.top-slider__title= item.title
+										.top-slider__tag Ultra Blonde | Red Red | Lavander
+
+										.top-slider__btn
+											a.btn.btn_border(href='#') Подробнее
+
+									.top-slider__img
+										img(src="assets/img/"+item.img, alt="")
+
+					.top-slider__arr
+						button.btn-arr.btn-arr_up.js-btn-arr-up(type='button')
+							svg.icon.ic-arr-up(width='46' height='24')
+								use(xlink:href='assets/sprites/sprite.svg#ic-arrow-up')
+
+						button.btn-arr.btn-arr_down.js-btn-arr-down(type='button')
+							svg.icon.ic-arr-down(width='46' height='24')
+								use(xlink:href='assets/sprites/sprite.svg#ic-arrow-down')
+
+	section.cat-sect-wrap
+		.container
+			.row
+				-
+					var list=[
+						{
+							title:'Домашний уход',
+							title2:'с',
+							nbsp:'true',
+							title_nbsp:'кератином',
+							img:'cat-sect1.png',
+							sub:[
+								{text:'Шампуни и кондиционеры'},
+								{text:'Тонирующие продукты'},
+								{text:'Маски c кератином'},
+								{text:'Стайлинг'},
+								{text:'Сыворотки'},
+								{text:'Наборы GKBox'},
+								{text:'Спреи'},
+								{text:'Подарочные карты'},
+							]
+						},
+
+						{
+							title:'Приборы',
+							title2:'и',
+							nbsp:'true',
+							title_nbsp:'аксессуары',
+							img:'cat-sect2.png',
+							sub:[
+								{text:'Техника'},
+								{text:'Расчески'},
+								{text:'Аксессуары'},
+							]
+						},
+
+						{
+							title:'Кератиновое восставновление',
+							title2:'и',
+							nbsp:'true',
+							title_nbsp:'выпрямление',
+							img:'cat-sect3.png',
+							sub:[
+								{text:'Классические кератиновые составы'},
+								{text:'Составы на основе глиоксиловой кислоты'},
+							]
+						},
+
+						{
+							title:'Система',
+							title2:'окрашивания',
+							img:'cat-sect4.png',
+							sub:[
+								{text:'Краситель Cream Color'},
+								{text:'Защитная добавка'},
+								{text:'Осветляющие продукты'},
+								{text:'Защита цвета'},
+								{text:'Оксиды'},
+							]
+						},
+					]
+				each item in list
+					.col-6
+						.cat-sect
+							.cat-sect__top
+								.cat-sect__title
+									a(href="#") 
+										b= item.title
+										| 
+										=item.title2
+										if(item.nbsp)
+											|&nbsp;
+											=item.title_nbsp
+
+								.cat-sect__img
+									img(src="assets/img/"+item.img, alt="")
+
+							ul.cat-sect-sub
+								each sub in item.sub
+									li.cat-sect-sub__item
+										a(href="#").cat-sect-sub__link= sub.text
+
+	
+	section.cat-sect-wrap
+		.container
+			.row
+				.col-12
+					.h1.text-center Популярные продукты
+
+					.cat-list-slider
+						-
+							var list=[
+								{
+									img:'catalog1.jpg',
+									title:'Dry Oil Shine Spray GKhair 115 мл.',
+									text:'Сухое масло - спрей для блеска',
+									status:'Достаточно',
+									price:'1 215 ₽',
+									sticker:[
+										{text:'хит'},
+									]
+								},
+
+								{
+									img:'catalog2.jpg',
+									title:'VolumizeHer Spray GKhair 30 мл.',
+									text:'Спрей для создания объёма',
+									status:'Мало',
+									price:'580 ₽',
+									sticker:[
+										{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+									]
+								},
+
+								{
+									img:'catalog3.jpg',
+									title:'Moisturizing Box',
+									text:'Набор увлажняющий',
+									status:'Достаточно',
+									price:'2 720 ₽',
+									sticker:[
+										{text:'new', color: 'green'},
+										{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+									]
+								},
+
+								{
+									img:'catalog4.jpg',
+									title:'Cashmere GKhair 50 мл.',
+									text:'Крем - кашемир, сыворотка',
+									status:'Много',
+									price:'1 700 ₽',
+									sticker:[
+										{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+									]
+								},
+							]
+						each item in list
+							.cat-item
+								.cat-item__img-wrap
+									.sticker
+										each sticker in item.sticker
+											.sticker__item
+												.sticker__bg
+													if(sticker.text)
+														=sticker.text
+
+													if(sticker.icon)
+														+svg(sticker.icon, sticker.icon, sticker.icon_width, sticker.icon_height)
+
+									a(href="#").cat-item__img
+										img(src="assets/img/"+item.img, alt="")
+
+
+								.cat-item__content
+									.cat-item__info
+										.cat-item__title
+											a(href="#")= item.title
+
+										.cat-item__text= item.text
+
+									.cat-item__bottom
+										.cat-item__status
+											+svg('ic-tick','ic-tick', '10', '8')
+											=item.status
+
+										.cat-item__price= item.price

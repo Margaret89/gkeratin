@@ -1,0 +1,84 @@
+/*-------------- cat-sect -----------------*/
+.cat-sect-wrap{
+	margin: 80px 0;
+
+	.row [class^=col]:nth-child(4n+2) .cat-sect{background: #f5d6e2;}
+	.row [class^=col]:nth-child(4n+3) .cat-sect{background: #ffca7a;}
+	.row [class^=col]:nth-child(4n+4) .cat-sect{background: #ffbcc7;}
+}
+
+.cat-sect{
+	height: calc(100% - 38px);
+	min-height: 310px;
+	margin-bottom: 38px;
+	background: #f4e5e0;
+	border-radius: 20px;
+	padding: 42px 50px;
+	position: relative;
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 192px;
+		height: 58px;
+		background: url(../img/bg-label-sect.png) no-repeat top center;
+		position: absolute;
+		top: 0;
+		right: 20px;
+	}
+
+	&__top{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title{
+		max-width: calc(50% - 15px);
+		@include font(normal, 300, 2.6rem, 1.2, #000);
+
+		b{font-weight: 500;}
+
+		a{
+			color: #000;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-orange;}
+	}
+
+	&__img{
+		max-width: calc(50% - 15px);
+		margin-top: -65px;
+		position: relative;
+	}
+}
+
+.cat-sect-sub{
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 20px;
+		margin-bottom: -12px;
+	}
+
+	&__item{
+		width: calc(50% - 15px);
+		margin-bottom: 13px;
+	}
+
+	&__item,
+	&__link{
+		@include font(normal, normal, 1.6rem, 1.4, $color-text);
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link{text-decoration: none;}
+	&__link:hover{color: $color-orange;}
+}
