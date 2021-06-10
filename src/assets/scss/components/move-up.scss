@@ -16,7 +16,7 @@
 	transition: box-shadow 0.2s ease 0s,
 				right 0.3s ease 0s;
 
-	.icon{stroke: #fff;}
+	.icon{fill: #fff;}
 
 	&:hover{box-shadow: inset 0 -6.8rem 0 0 $color-dark-orange;}
 

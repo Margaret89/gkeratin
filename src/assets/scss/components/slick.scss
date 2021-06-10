@@ -1,0 +1,24 @@
+/*-------------- slick -----------------*/
+.btn-arr{
+	display: block;
+	font-size: 0;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	background: transparent;
+	box-shadow: none;
+	position: absolute;
+	@include top-center;
+	z-index: 10;
+
+	&_left{left: 20px;}
+	&_right{right: 20px;}
+
+	.icon{
+		fill: #ccc;
+		transition: fill 0.2s ease 0s;
+	}
+
+	&:hover .icon{fill: #000;}
+}
