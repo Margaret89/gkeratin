@@ -1,0 +1,59 @@
+/*-------------- pager -----------*/
+.pager{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		width: 42px;
+		height: 42px;
+		border-radius: 5px;
+		border: 1px solid #dbdbdb;
+		@include font(normal, bold, 1.6rem, 1, #000);
+		text-decoration: none;
+		margin: 3px;
+		transition: all 0.2s ease;
+	}
+
+	&__nav{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 42px;
+		border-radius: 5px;
+		border: 1px solid #dbdbdb;
+		padding: 5px;
+		margin: 3px;
+		cursor: pointer;
+
+		.icon{
+			fill: #000;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__item:hover,
+	&__item.active,
+	&__nav:hover{
+		background: #000;
+		border-color: #000;
+		color: #fff;
+
+		.icon{fill: #fff;}
+	}
+
+	&__nav.disable{
+		opacity: 0.2;
+		background: transparent;
+		border-color: #dbdbdb;
+		cursor: auto;
+
+		.icon{fill: #000;}
+	}
+}

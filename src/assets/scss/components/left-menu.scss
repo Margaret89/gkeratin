@@ -1,0 +1,75 @@
+/*-------------- left-menu -----------------*/
+.left-menu{
+	border: 1px solid #dbdbdb;
+	background: #ffe6cb;
+
+	&,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__link{
+		display: flex;
+		justify-content: space-between;
+		padding: 18px 30px 22px;
+		position: relative;
+		@include font(normal, normal, 1.8rem, 1.4, #000);
+		text-decoration: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		flex: 0 0 20px;
+		margin: 3px 0 0 10px;
+
+		.icon{
+			fill: #999;
+			transition: all 0.3s ease 0s;
+		}
+	}
+
+	&__item:not(:last-child){border-bottom: 1px solid #fff;}
+
+	&__sub{
+		display: none;
+		background: #fff;
+		padding: 16px 0;
+	}
+
+	&__sub-link{
+		display: flex;
+		justify-content: space-between;
+		padding: 4px 37px;
+		@include font(normal, normal, 1.6rem, 1.5, $color-grey);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__item.active > &__link,
+	&__link:hover{
+		background: #000;
+		color: #fff;
+
+		.icon{fill: #fff;}
+	}
+
+	&__sub-item.active > &__sub-link,
+	&__sub-link:hover{
+		color: #000;
+	}
+
+	&__arr.active .icon{transform: rotate(180deg);}
+}
+
+@media (max-width: 1259px) {
+	.left-menu{
+		&__link{padding: 15px 15px 18px;}
+	}
+}

@@ -1,0 +1,47 @@
+/*-------------- counter -----------------*/
+.counter{
+	display: inline-flex;
+	height: 4rem;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+	border-radius: 5px;
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 100%;
+		cursor: pointer;
+
+		.icon{
+			fill: #adadad;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__arr:hover .icon{fill: #000;}
+
+	input[type="text"]{
+		display: inline-block;
+		height: 100%;
+		width: 4rem;
+		font-family: $font-site;
+		@include font(normal, normal, 1.6rem, 2.8rem, #000);
+		text-align: center;
+		padding: 0;
+		background: transparent;
+		border: 0;
+		outline: 0;
+		margin: 0;
+		box-shadow: none;
+	}
+}
+
+@media (max-width: 991px) {
+	.counter{
+		height: 3.5rem;
+		
+		input[type="text"]{font-size: 1.3rem;}
+	}
+}

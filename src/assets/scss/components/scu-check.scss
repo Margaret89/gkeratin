@@ -1,0 +1,25 @@
+/*-------------- scu-check -----------------*/
+.scu-check{
+	&__label{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 48px;
+		min-height: 32px;
+		cursor: pointer;
+		padding: 5px;
+		@include font(normal, normal, 1.2rem, 1.2, #999);
+		text-align: center;
+		background: #ebebeb;
+		border: 1px solid #ebebeb;
+		transition: all 0.2s ease 0s;
+	}
+
+	input[type=checkbox]{display: none;}
+
+	input[type=checkbox]:checked + &__label{
+		background: #fff;
+		border-color: #dbdbdb;
+		color: #000;
+	}
+}

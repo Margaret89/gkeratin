@@ -1,0 +1,487 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог';
+	- var h1 = 'Шампуни и кондиционеры';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Каталог'},
+			{href:'#',name:'Домашний уход'},
+			{href:'#',name:'Шампуни и кондиционеры'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.catalog
+		.container
+			.row
+				.col-lg-3
+					ul.left-menu.d-none.d-lg-block
+						-
+							var list=[
+								{
+									text:'Домашний уход',
+									sub:[
+										{text:'Шампуни и кондиционеры'},
+										{text:'Маски c кератином'},
+										{text:'Сыворотки'},
+										{text:'Спреи'},
+										{text:'Тонирующие продукты'},
+										{text:'Стайлинг'},
+										{text:'Наборы GKBox'},
+										{text:'Подарочные карты'},
+									]
+								},
+								{
+									text:'Приборы и аксессуары для волос',
+									sub:[
+										{text:'Техника'},
+										{text:'Расчески'},
+										{text:'Аксессуары'},
+									]
+								},
+								{
+									text:'Кератиновое выпрямление и восстановление',
+									sub:[
+										{text:'Классические кератиновые составы'},
+										{text:'Составы на основе глиоксиловой кислоты'},
+									]
+								},
+								{
+									text:'Система окрашивания',
+									sub:[
+										{text:'Краситель Cream Color'},
+										{text:'Осветляющие продукты'},
+										{text:'Оксиды'},
+										{text:'Защитная добавка'},
+										{text:'Защита цвета'},
+									]
+								},
+							]
+						each item in list
+							li.left-menu__item
+								a(href="#").left-menu__link.js-left-menu-link= item.text
+									.left-menu__arr.js-left-menu-arr
+										+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+
+								ul.left-menu__sub.js-left-menu-sub
+									each sub in item.sub
+										li.left-menu__sub-item
+											a(href="#").left-menu__sub-link= sub.text
+
+					
+					.filter-wrap
+						.filter-btn.d-lg-none.js-filter-btn
+							span.filter-btn__icon
+								+svg('ic-filter','ic-filter', '18', '18')
+							span.filter-btn__text Фильтр товаров
+
+						form.filter.js-filter
+							.filter__item.js-filter-item
+								.filter__head.js-filter-head
+									.filter__title Цена
+									.filter__arr
+										+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+								
+								.filter__content.js-filter-content
+									.range
+										.range__fields
+											input#slider-range-min.js-slider-range-min(type="text", autocomplete="off")
+											.range__separator -
+											input#slider-range-max.js-slider-range-max(type="text", autocomplete="off")
+
+										.range__slider
+											#slider-range.js-slider-range(data-min="1000", data-max="3200",data-cur-min="1420",data-cur-max="2790", autocomplete="off")
+
+							.filter__item.js-filter-item
+								.filter__head.js-filter-head
+									.filter__title Наши предложения
+									.filter__arr
+										+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+								
+								.filter__content.js-filter-content
+									-
+										var list=[
+											{text:'Хит', status:'active'},
+											{text:'Советуем'},
+											{text:'Новинка'},
+											{text:'Профессиональная'},
+										]
+
+									each item, index in list
+										.filter__param
+											.input-check
+												if(item.status)
+													input(type='checkbox', id='param'+index, checked='checked')
+												else
+													input(type='checkbox', id='param'+index)
+												label.input-check__label(for='param'+index)
+													span.input-check__mark
+														+svg('ic-tick','ic-tick', '10', '8')
+													span.input-check__text= item.text
+							
+							.filter__item.js-filter-item
+								.filter__head.js-filter-head
+									.filter__title Объем, мл
+									.filter__arr
+										+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+								
+								.filter__content.js-filter-content
+									-
+										var list=[
+											{text:'100', status:'active'},
+											{text:'130'},
+											{text:'150'},
+											{text:'219'},
+											{text:'240'},
+											{text:'250'},
+											{text:'300', status:'active'},
+											{text:'650'},
+											{text:'1000'},
+										]
+
+									.filter__scu
+										each item, index in list
+											.scu-check
+												if(item.status)
+													input(type='checkbox', id='scu'+index, checked='checked')
+												else
+													input(type='checkbox', id='scu'+index)
+												label.scu-check__label(for='scu'+index)= item.text
+
+				.col-lg-9
+					.sort
+						span.sort__title Сортировать по:
+						span.sort__list
+							a(href="#").sort__item Популярности
+							a(href="#").sort__item Алфавиту
+							a(href="#").sort__item.active Цене
+
+					.cat-list
+						.row
+							-
+								var list=[
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										old_price:'1 790 ₽',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										old_price:'3 790 ₽',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										old_price:'1 790 ₽',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										old_price:'3 790 ₽',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										old_price:'1 790 ₽',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										old_price:'3 790 ₽',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+								]
+							each item in list
+								.col-6.col-md-4
+									.cat-item
+										.cat-item__img-wrap
+											.sticker
+												each sticker in item.sticker
+													.sticker__item
+														.sticker__bg(class=sticker.color?'sticker__bg_'+sticker.color:'')
+															if(sticker.icon == 'ic-sale')
+																+svg('bg-sale','bg-sale', '50', '50')
+															else
+																+svg('bg-sticker','bg-sticker', '50', '50')
+
+														if(sticker.text)
+															.sticker__text=sticker.text
+
+														if(sticker.icon)
+															.sticker__icon
+																+svg(sticker.icon, sticker.icon, sticker.icon_width, sticker.icon_height)
+
+											a(href="#").cat-item__img
+												img(src="assets/img/"+item.img, alt="")
+
+
+										.cat-item__content
+											.cat-item__info
+												.cat-item__title
+													a(href="#")= item.title
+
+												.cat-item__text= item.text
+
+											.cat-item__bottom
+												.cat-item__status
+													+svg('ic-tick','ic-tick', '10', '8')
+													=item.status
+
+												.cat-item__price
+													if(item.old_price)
+														span.cat-item__old-price= item.old_price
+													span.cat-item__cur-price= item.price
+						
+										.cat-item__action
+											.cat-item__count
+												.counter
+													.counter__arr
+														+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+													.counter__field
+														input(type="text", value="1")
+													.counter__arr
+														+svg('ic-arrow-up','ic-arrow-up', '14', '8')
+
+											.cat-item__btn
+												a.btn.btn_border.btn_small(href='#') В корзину
+												a(href="#").cat-item__wish
+													+svg('ic-heart','ic-heart', '20', '20')
+
+					.pager
+						a.pager__nav.disable(href="#")
+							+svg('ic-arrow-left','ic-arrow-left', '6', '12')
+
+						a.pager__item(href='#') 1
+						a.pager__item.active(href='#') 2
+						a.pager__item(href='#') 3
+						//- a.pager__item(href='#') 4
+
+						a.pager__nav(href="#")
+							+svg('ic-arrow-right','ic-arrow-right', '6', '12')
+
+
+					.catalog__bottom
+						p В нашем интернет-магазине можно выбрать и купить шампуни и кондиционеры с кератином Juvexin для салонного/домашнего использования. Все продукты подразделяются на линии, разработанные под каждый тип волос. В составе каждой линии содержится уникально подобранный комплекс натуральных растительных экстрактов, масел и аминокислот. В нашем ассортименте есть шампуни и кондиционеры с кератином, объемом - 1000 мл, 650 мл, 300 мл, 240, и 100 мл.
+
+
+					.cat-list-slider-wrap
+						.h1.text-center Лучшие предложения
+
+						.cat-list-slider.js-popular-slider
+							-
+								var list=[
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										old_price:'1 790 ₽',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog4.jpg',
+										title:'Cashmere GKhair 50 мл.',
+										text:'Крем - кашемир, сыворотка',
+										status:'Много',
+										price:'1 700 ₽',
+										sticker:[
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog4.jpg',
+										title:'Cashmere GKhair 50 мл.',
+										text:'Крем - кашемир, сыворотка',
+										status:'Много',
+										price:'1 700 ₽',
+										sticker:[
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+										]
+									},
+								]
+							each item in list
+								.cat-item
+									.cat-item__img-wrap
+										.sticker
+											each sticker in item.sticker
+												.sticker__item
+													.sticker__bg(class=sticker.color?'sticker__bg_'+sticker.color:'')
+														if(sticker.icon == 'ic-sale')
+															+svg('bg-sale','bg-sale', '50', '50')
+														else
+															+svg('bg-sticker','bg-sticker', '50', '50')
+
+													if(sticker.text)
+														.sticker__text=sticker.text
+
+													if(sticker.icon)
+														.sticker__icon
+															+svg(sticker.icon, sticker.icon, sticker.icon_width, sticker.icon_height)
+
+										a(href="#").cat-item__img
+											img(src="assets/img/"+item.img, alt="")
+
+
+									.cat-item__content
+										.cat-item__info
+											.cat-item__title
+												a(href="#")= item.title
+
+											.cat-item__text= item.text
+
+										.cat-item__bottom
+											.cat-item__status
+												+svg('ic-tick','ic-tick', '10', '8')
+												=item.status
+
+											.cat-item__price
+												if(item.old_price)
+													span.cat-item__old-price= item.old_price
+												span.cat-item__cur-price= item.price

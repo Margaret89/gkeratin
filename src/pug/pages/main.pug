@@ -249,7 +249,8 @@ block content
 											+svg('ic-tick','ic-tick', '10', '8')
 											=item.status
 
-										.cat-item__price= item.price
+										.cat-item__price
+											span.cat-item__cur-price= item.price
 					
 					.cat-list-slider-more
 						a.btn.btn_border(href='#') Перейти в каталог

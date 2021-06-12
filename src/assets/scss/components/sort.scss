@@ -1,0 +1,55 @@
+/*-------------- sort -----------------*/
+.sort{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 17px;
+	margin-bottom: 30px;
+
+	&__title{
+		@include font(normal, normal, 1.8rem, 1.5, $color-text);
+		white-space: nowrap;
+		margin: 5px 20px 5px 0;
+	}
+	
+	&__item{
+		display: inline-block;
+		@include font(normal, normal, 1.8rem, 1.5, #999);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+		margin: 5px 10px 5px 0;
+	}
+
+	&__item:hover,
+	&__item.active{
+		color: #000;
+	}
+
+	&__item.active{cursor: auto;}
+}
+
+@media (max-width: 767px) {
+	.sort{
+		display: block;
+		margin-top: 13px;
+		margin-bottom: 18px;
+
+		&__title{
+			display: block;
+			margin: 0;
+		}
+
+		&__list{
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__item,
+		&__title{
+			font-size: 1.6rem;
+		}
+
+		&__item{margin-right: 18px;}
+		&__item:last-child{margin-right: 0;}
+	}
+}

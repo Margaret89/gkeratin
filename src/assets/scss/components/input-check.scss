@@ -4,7 +4,7 @@
 		display: inline-flex;
 		vertical-align: top;
 		cursor: pointer;
-		@include font(normal, normal, 1.4rem, 1.2, #000);
+		@include font(normal, normal, 1.6rem, 1.2, #000);
 		margin: 0;
 	}
 
@@ -18,7 +18,7 @@
 		flex: 0 0 18px;
 		width: 18px;
 		height: 18px;
-		border: 1px solid $color-orange;
+		border: 1px solid #dbdbdb;
 		border-radius: 3px;
 		outline: none;
 		background: #fff;
@@ -47,6 +47,6 @@
 		a:hover{color: $color-orange;}
 	}
 
-	input[type=checkbox]:checked + &__label &__mark{background: $color-orange;}
+	input[type=checkbox]:checked + &__label &__mark{background: $color-orange; border-color: $color-orange;}
 	input[type=checkbox]:checked + &__label &__mark .icon{display: inline-block;}
 }
