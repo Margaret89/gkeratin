@@ -11,9 +11,9 @@ block content
 					.top-slider__list.js-top-slider-list
 						-
 							var list=[
-								{label:'Тонирующие маски', title:'Bombshell Masques', img:'top-slide1.png'},
-								{label:'Тонирующие маски 2', title:'Bombshell Masques 2', img:'top-slide2.png'},
-								{label:'Тонирующие маски 3', title:'Bombshell Masques 3', img:'top-slide3.png'},
+								{label:'Тонирующие маски', title:'Bombshell Masques', img:'top-slide1.png', img_mob:'top-slide1-mobile.png'},
+								{label:'Тонирующие маски 2', title:'Bombshell Masques 2', img:'top-slide2.png', img_mob:'top-slide2-mobile.png'},
+								{label:'Тонирующие маски 3', title:'Bombshell Masques 3', img:'top-slide3.png', img_mob:'top-slide3-mobile.png'},
 							]
 						each item in list
 							.top-slider__item
@@ -27,7 +27,9 @@ block content
 											a.btn.btn_border(href='#') Подробнее
 
 									.top-slider__img
-										img(src="assets/img/"+item.img, alt="")
+										picture
+											source(srcset='assets/img/'+item.img_mob, media='(max-width: 767px)')
+											img(src="assets/img/"+item.img, alt="")
 
 					.top-slider__arr.js-top-slider-arr
 
@@ -93,7 +95,7 @@ block content
 						},
 					]
 				each item in list
-					.col-6
+					.col-lg-6
 						.cat-sect
 							.cat-sect__top
 								.cat-sect__title
@@ -252,14 +254,14 @@ block content
 					.cat-list-slider-more
 						a.btn.btn_border(href='#') Перейти в каталог
 
-	section.advant-wrap.bg-grey
+	section.advant-wrap
 		.container
 			.row
-				.col-4
+				.col-4.d-none.d-lg-block
 					.advant-wrap__img
 						img(src="assets/img/advant.png", alt="")
 				
-				.col-8
+				.col-lg-8
 					.advant
 						-
 							var list=[
@@ -288,14 +290,14 @@ block content
 							-
 								var list=[
 									{img:'gallery1.jpg', size:'big'},
-									{img:'gallery2.jpg'},
-									{img:'gallery3.jpg'},
-									{img:'gallery4.jpg'},
-									{img:'gallery5.jpg'},
+									{img:'gallery2.jpg', class:'d-none d-md-block'},
+									{img:'gallery3.jpg', class:'d-none d-md-block'},
+									{img:'gallery4.jpg', class:'d-none d-md-block'},
+									{img:'gallery5.jpg', class:'d-none d-md-block'},
 								]
 
 							each item in list
-								a.gallery__item(href='assets/img/'+item.img data-fancybox='gallery', class=item.size=='big'?'gallery__item_big':'')
+								a.gallery__item(href='assets/img/'+item.img, data-fancybox='gallery', class=item.size=='big'?'gallery__item_big':'d-none d-md-block')
 									img(src="assets/img/"+item.img, alt="")
 
 						.gallery__more
@@ -304,7 +306,7 @@ block content
 	section.about.bg-grey
 		.container
 			.row
-				.col-6
+				.col-lg-6
 					.about__content
 						.h1 О нас
 
@@ -313,7 +315,7 @@ block content
 
 						a.btn.btn_border(href='#') Подробнее
 
-				.col-6
+				.col-lg-6
 					.about__img
 						img(src="assets/img/about.png", alt="")
 
@@ -328,12 +330,12 @@ block content
 					-
 						var list=[
 							{img:'news1.jpg', date:'4 Декабря 2019', title:'Закажи новую лимитированную коробочку GKhair'},
-							{img:'news2.jpg', date:'17 Мая 2020', title:'Антисептик для рук любимых клиентов'},
-							{img:'news3.jpg', date:'24 Декабря 2019', title:'Подарочные карты GKhair'},
+							{img:'news2.jpg', date:'17 Мая 2020', title:'Антисептик для рук любимых клиентов', class:'d-none d-md-block'},
+							{img:'news3.jpg', date:'24 Декабря 2019', title:'Подарочные карты GKhair', class:'d-none d-md-block'},
 						]
 					
 					each item in list
-						.col-4
+						.col-md-4(class=item.class)
 							a(href="#").news-item
 								.news-item__img(style="background-image: url(assets/img/"+item.img+")")
 

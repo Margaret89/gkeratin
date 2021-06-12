@@ -5,10 +5,13 @@ header.header
 				.col-12
 					.header-top__content
 						.header-top__info
+							span.ic-hamburger.js-btn-menu.d-lg-none
+								span
+
 							a(href="#").header-top__logo
 								img(src="assets/img/logo.png", alt="")
 
-							.social
+							.social.d-none.d-lg-inline-flex
 								a(href="#").social__item
 									+svg('ic-instagram','ic-instagram', '20', '20')
 
@@ -18,36 +21,44 @@ header.header
 								a(href="#").social__item
 									+svg('ic-fb','ic-fb', '12', '20')
 							
-							.header-top__contacts
+							.header-top__contacts.js-contacts
 								span.header-top__phone
 									a(href="tel:+78005050984") 8 (800) 505 09 84
 								a(data-fancybox='' data-src='#feadback-form' href='javascript:;').header-top__callback Заказать звонок
 
 						.header-top__action
 							.header-action
+								.header-action__item.js-btn-contacts.d-lg-none
+									.header-action__icon
+										+svg('ic-call','ic-call', '20', '20')
+							
 								.header-action__item
 									.search-form.js-search-form
 										.search-form__btn.js-search-form-btn
 											+svg('ic-search','ic-search', '20', '20')
 
-										.search-form__field
-											input(type="text", placeholder="Введите название товара")
-											button(type="submit")
-												+svg('ic-search','ic-search', '20', '20')
-							
+										.search-form__content.js-search-form-content
+											.search-form__field
+												input(type="text", placeholder="Введите название товара")
+												button(type="submit")
+													+svg('ic-search','ic-search', '20', '20')
+								
 								a(href="#").header-action__item
 									.header-action__icon
 										+svg('ic-heart','ic-heart', '20', '20')
 
 								a(href="#").header-action__item
 									.header-action__icon
-										+svg('ic-cart','ic-cart', '20', '18')
+										+svg('ic-cart','ic-cart', '20', '20')
 										.header-action__num 0
 
 							.header-top__auth
-								a.btn.btn_border.btn_small(href='#') Войти
+								a.btn.btn_border.btn_small(href='#')
+									span.d-lg-none
+										+svg('ic-enter','ic-enter', '20', '20')
+									span.d-none.d-lg-inline Войти
 	
-	navbar.header-nav
+	navbar.header-nav.js-header-nav
 		.container
 			.row
 				.col-12
@@ -82,16 +93,19 @@ header.header
 
 							each item in list
 								li.main-menu__item(class=item.status?'active':'', class=item.catalog?'main-menu__item_no-pos':'')
-									a(href="#").main-menu__link= item.text
+									a(href="#").main-menu__link.js-main-menu-link= item.text
+										if(item.sect || item.catalog)
+											.main-menu__arr.d-lg-none.js-main-menu-arr
+												+svg('ic-arrow-down','ic-arrow-down', '14', '8')
 
 									if(item.sect)
-										ul.main-menu__sub
+										ul.main-menu__sub.js-main-menu-sub
 											each sub in item.sect
 												li.main-menu__sub-item
 													a(href="#").main-menu__sub-link= sub.text
 
 									if(item.catalog)
-										.main-menu-cat-wrap
+										.main-menu-cat-wrap.js-main-menu-sub
 											.main-menu-cat
 												-
 													var cat=[
@@ -146,19 +160,21 @@ header.header
 													]
 												each catsect in cat
 													.main-menu-cat__sect
-														.main-menu-cat__title= catsect.title
+														.main-menu-cat__title.d-none.d-lg-block= catsect.title
 														
 														ul.main-menu-cat__list
 															each catitem in catsect.list
 																li.main-menu-cat__item
-																	a(href="#").main-menu-cat__link= catitem.text
+																	a(href="#").main-menu-cat__link.js-main-menu-link= catitem.text
+																		.main-menu-cat__arr.js-main-menu-arr.d-lg-none
+																			+svg('ic-arrow-down','ic-arrow-down', '14', '8')
 
-																	ul.main-menu-cat__sub
+																	ul.main-menu-cat__sub.js-main-menu-sub
 																		each catsub in catitem.sub
 																			li.main-menu-cat__sub-item
 																				a(href="#").main-menu-cat__sub-link= catsub.text
 
-											.product-menu
+											.product-menu.d-none.d-lg-block
 												.product-menu__img(style="background-image: url(assets/img/product-menu.jpg);")
 													.product-menu__label new
 

@@ -1,8 +1,12 @@
 /*-------------- advant -----------------*/
 .advant-wrap{
 	margin: 80px 0;
+	background: #f5f5f5;
 
 	&__img{
+		display: flex;
+		align-items: flex-end;
+		height: calc(100% + 40px);
 		margin-top: -40px;
 		margin-left: -120px;
 	}
@@ -44,5 +48,34 @@
 	&__text{
 		@include font(normal, normal, 1.6rem, 1.5, #000);
 		margin-top: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.advant-wrap{
+		background: transparent;
+		margin: 60px 0 40px;
+	}
+
+	.advant{
+		display: block;
+		padding: 0;
+		margin: 0;
+
+		&__item{
+			width: 100%;
+			display: block;
+			margin: 0 0 25px;
+			text-align: center;
+		}
+
+		&__icon{
+			margin: 0 0 13px;
+			border: 1px solid #ebebeb;
+		}
+
+		&__content{padding-top: 0;}
+		&__title{font-size: 1.8rem;}
+		&__text{font-size: 1.4rem;}
 	}
 }

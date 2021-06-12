@@ -2,12 +2,12 @@ footer.footer
 	.footer-top
 		.container
 			.row
-				.col-3
-					.footer-top__logo
+				.col-md-4.col-lg-3.order-2.order-md-0
+					.footer-top__logo.d-none.d-md-block
 						a(href="#")
 							img(src="assets/img/logo.png", alt="")
 
-					.footer-top__slogan Официальный дистрибьютор в России с 2011 года
+					.footer-top__slogan.d-none.d-md-block Официальный дистрибьютор в России с 2011 года
 
 					.social
 						a(href="#").social__item
@@ -28,7 +28,7 @@ footer.footer
 							a(href="#")
 								img(src="assets/img/appstore.png", alt="")
 
-				.col-3
+				.col-md-4.col-lg-3.d-none.d-md-block
 					.footer-top__title Меню
 
 					ul.footer-menu
@@ -45,7 +45,7 @@ footer.footer
 							li.footer-menu__item
 								a(href="#").footer-menu__link= item.text
 
-				.col-3
+				.col-md-4.col-lg-3.d-none.d-md-block
 					.footer-top__title Продукция
 
 					ul.footer-menu
@@ -63,7 +63,7 @@ footer.footer
 							li.footer-menu__item
 								a(href="#").footer-menu__link= item.text
 
-				.col-3.d-flex.justify-content-end
+				.col-lg-3.d-flex.justify-content-lg-end.order-1.order-md-4
 					a.btn.btn_border(href='#') Запросить прайс-лист
 
 	.footer-bottom

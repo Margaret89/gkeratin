@@ -32,6 +32,9 @@
 	}
 
 	&__img{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -163,4 +166,33 @@
 .cat-list-slider-more{
 	text-align: center;
 	margin-top: 55px;
+}
+
+@media (max-width: 767px) {
+	.cat-list-slider-wrap{
+		margin: 40px 0;
+
+		h1, .h1, h2, .h2{margin-bottom: 2.5rem;}
+	}
+
+	.cat-item{
+		&__img-wrap{
+			padding-bottom: 93%;
+			margin-bottom: 23px;
+		}
+
+		&__content{padding: 0 40px}
+		.sticker{left: 20px;}
+	}
+
+	.cat-list-slider{
+		margin: 0;
+
+		.cat-item{margin: 0;}
+
+		.btn-arr{
+			top: 23%;
+			transform: none;
+		}
+	}
 }

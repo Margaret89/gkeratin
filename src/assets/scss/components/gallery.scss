@@ -55,3 +55,22 @@ a.gallery{
 		transform: translate(-50%, -50%) scale(1);
 	}
 }
+
+@media (max-width: 767px) {
+	.gallery-wrap{margin: 40px 0;}
+
+	.gallery{
+		&__list{
+			display: block;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+
+		&__item{
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		&__more{margin-top: 30px;}
+	}
+}

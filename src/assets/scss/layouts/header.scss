@@ -114,9 +114,139 @@
 		top: -8px;
 		right: -15px;
 	}
+
+	&__item &__icon .ic-call{cursor: pointer;}
+	.ic-call:hover{fill: $color-orange;}
 }
 
 .header-nav{
 	display: block;
 	border-bottom: 1px solid #ebebeb;
+}
+
+@media (max-width: 1259px) {
+	.header-top{
+		&__phone{display: block;}
+
+		&__contacts{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		&__callback{margin-top: 5px;}
+		&__callback::before{display: none;}
+	}
+}
+
+@media (min-width: 992px) {
+	.header-top{
+		&__contacts{display: inline-flex!important;}
+	}
+
+	.header-nav{display: block!important;}
+}
+
+@media (max-width: 991px) {
+	.header-top{
+		position: relative;
+		border-bottom: 1px solid #ebebeb;
+
+		&__content{height: 62px;}
+
+		&__logo{
+			padding: 0 10px 0 0;
+
+			img{max-height: 38px;}
+		}
+
+		.col-12{position: static;}
+
+		&__contacts{
+			display: none;
+			text-align: center;
+			width: 100%;
+			background: #fff;
+			margin-top: 1px;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 10;
+		}
+
+		&__phone{font-size: 1.8rem;}
+
+		&__callback{
+			display: inline-block;
+			height: 6rem;
+			min-width: 185px;
+			background: transparent;
+			border: 2px solid $color-orange;
+			border-radius: 4px;
+			@include font(normal, bold, 1.8rem, 5.6rem, #000);
+			text-decoration: none;
+			text-align: center;
+			white-space: nowrap;
+			padding: 0 25px;
+			margin-top: 15px;
+			cursor: pointer;
+			transition: all 0.2s ease 0s;
+			position: relative;
+
+			&:hover {
+				color: #fff;
+				box-shadow: inset 0 -6.8rem 0 0 $color-orange;
+			}
+		}
+
+		&__auth{
+			padding: 0;
+
+			.btn_small,
+			button.btn_small,
+			input[type="submit"].btn_small{
+				height: auto;
+				border: 0;
+				padding: 0;
+
+				.icon{
+					fill: #adadad;
+					transition: fill 0.2s ease 0s;
+				}
+				
+				&:hover{
+					box-shadow: none;
+					.icon{fill: $color-orange;}
+				}
+			}
+		}
+
+		&__content,
+		&__info{
+			display: flex;
+			align-items: center;
+		}
+
+		.ic-hamburger{margin-right: 30px;}
+	}
+
+	.header-action{
+		border-right: 0;
+		padding: 0 10px;
+
+		&__item{margin: 0 10px;}
+	}
+
+	.header-nav{
+		display: none;
+		width: 100vw;
+		height: calc(100vh - 62px);
+		overflow-y: auto;
+		background: #ffe6cb;
+		position: absolute;
+		top: 62px;
+		left: 0;
+		z-index: 1000;
+	}
 }

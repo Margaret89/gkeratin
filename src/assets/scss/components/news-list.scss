@@ -56,3 +56,26 @@
 
 	&:hover &__img{transform: scale(1.05);}
 }
+
+@media (max-width: 991px) {
+	.news-item{
+		&__content{padding: 15px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.news-list-wrap{
+		margin-top: 40px;
+
+		.h1, .h2, h1, h2{margin-bottom: 2.5rem;}
+		&__more{margin-top: 0;}
+	}
+
+	.news-item{
+		height: auto;
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		&__content{padding: 40px;}
+	}
+}

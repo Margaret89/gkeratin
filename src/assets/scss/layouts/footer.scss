@@ -67,3 +67,55 @@
 		a:hover{color: $color-orange;}
 	}
 }
+
+@media (max-width: 1259px) {
+	.footer-top{
+		.btn_border{
+			display: inline-flex;
+			align-items: center;
+			white-space: normal;
+			line-height: 1.4;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.footer-top{
+		.btn{margin-top: 30px;}
+	}
+
+	.footer-bottom{
+		text-align: center;
+		&__content{flex-direction: column;}
+		&__copyright{margin-right: 0;}
+		
+		&__link{
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+			font-size: 0;
+
+			a{font-size: 1.4rem;}
+			a:not(:last-child){margin-bottom: 10px;}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.footer{padding-top: 40px;}
+
+	.footer-top{
+		.btn{margin: 0 auto;}
+
+		.social{
+			margin-left: auto;
+			margin-right: auto;
+			justify-content: center;
+		}
+
+		.app{
+			text-align: center;
+			margin-top: 35px;
+		}
+	}
+}

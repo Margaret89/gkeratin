@@ -22,3 +22,21 @@
 
 	&:hover .icon{fill: #000;}
 }
+
+@media (max-width: 767px) {
+	.btn-arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+
+		&_left{left: 10px;}
+		&_right{right: 10px;}
+
+		.icon{
+			width: 11px;
+			height: 22px;
+		}
+	}
+}
