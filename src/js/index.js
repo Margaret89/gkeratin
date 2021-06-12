@@ -235,3 +235,18 @@ if($('.js-slider-range').length){
 		}
 	});
 }
+
+// // unwrap block
+// if($('.js-unwrap-block').length){
+// 	$('.js-unwrap-block-btn').on('click',function(event){
+// 		event.preventDefault();
+// 		var $parent = $(this).parents('.js-unwrap-block');
+		
+// 		$parent.toggleClass('opened');
+// 		if($parent.hasClass('opened')){
+// 			$parent.children('.js-unwrap-content').slideDown(400);
+// 		}else{
+// 			$parent.children('.js-unwrap-content').slideUp(400);
+// 		}
+// 	});
+// }
