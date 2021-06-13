@@ -56,11 +56,38 @@ block content
 				br
 				br
 				br
+				div.h2 Списки
+				ul
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ol
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+				
+
+				br
+				br
+				br
 				div.h2 Кнопки
 				a.btn(href='#') Кнопка
 				br
 				br
+				a.btn.btn_grey(href='#') Кнопка
+				br
+				br
 				a.btn.btn_border(href='#') Кнопка
+				br
+				br
+				a.btn.btn_border.btn_grey(href='#') Кнопка
 				br
 				br
 				a.btn.btn_border.btn_small(href='#') Кнопка
@@ -98,7 +125,7 @@ block content
 				.unwrap-block.js-unwrap-block
 					.unwrap-block__head.js-unwrap-head
 						.unwrap-block__title Заголовок
-						.unwrap-block__btn.js-unwrap-block-btn
+						.unwrap-block__btn
 							+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
 					.unwrap-block__content.js-unwrap-content
@@ -185,6 +212,11 @@ block content
 
 					.type-icon__item
 						.type-icon__img
+							+svg('ic-present-stroke','ic-present-stroke', '26', '26')
+						.type-icon__name ic-present-stroke
+
+					.type-icon__item
+						.type-icon__img
 							+svg('ic-sale','ic-sale', '23', '18')
 						.type-icon__name ic-sale
 
@@ -218,7 +250,4 @@ block content
 							+svg('ic-garantee','ic-garantee', '20', '25')
 						.type-icon__name ic-garantee
 
-					.type-icon__item
-						.type-icon__img
-							+svg('ic-present','ic-present', '26', '26')
-						.type-icon__name ic-present
+					

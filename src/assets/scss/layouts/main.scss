@@ -73,6 +73,10 @@ h5,.h5{
 	margin-bottom: 1rem;
 }
 
+ol{list-style-position: inside;}
+ul{padding-left: 20px;}
+li{margin-bottom: 5px;}
+
 .wrapper{
 	display: flex;
 	flex-direction: column;
@@ -114,6 +118,20 @@ button.btn{
 	}
 }
 
+.btn_grey,
+input[type="submit"].btn_grey,
+button.btn_grey{
+	background: #dbdbdb;
+	border-color: #dbdbdb;
+	color: #000;
+
+	&:hover {
+		color: #fff;
+		border-color: $color-green;
+		box-shadow: inset 0 -6.8rem 0 0 $color-green;
+	}
+}
+
 .btn_border,
 input[type="submit"].btn_border,
 button.btn_border{
@@ -126,6 +144,19 @@ button.btn_border{
 		background: transparent;
 		border-color: $color-orange;
 		box-shadow: inset 0 -6.8rem 0 0 $color-orange;
+	}
+}
+
+
+.btn_border.btn_grey,
+input[type="submit"].btn_border.btn_grey,
+button.btn_border.btn_grey{
+	border-color: #dbdbdb;
+
+	&:hover {
+		color: $color-green;
+		border-color: $color-green;
+		box-shadow: none;
 	}
 }
 

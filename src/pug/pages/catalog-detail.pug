@@ -1,8 +1,7 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Каталог';
-	- var h1 = 'Шампуни и кондиционеры';
+	- var title = 'Каталог детальная';
 
 block breadcrumb
 	-
@@ -21,13 +20,17 @@ block content
 		.container
 			.cat-detail-top
 				.row
-					.col-6
+					.col-lg-6
 						.product-slider-wrap
-							.sticker.sticker_big
+							.sticker
 								.sticker__item
+									.sticker__bg
+										+svg('bg-sticker','bg-sticker', '50', '50')
 									.sticker__text хит
 
-								.sticker__item.sticker__item_pink
+								.sticker__item
+									.sticker__bg.sticker__bg_pink
+										+svg('bg-sticker','bg-sticker', '50', '50')
 									.sticker__icon
 										+svg('ic-like','ic-like', '20', '20')
 
@@ -36,6 +39,11 @@ block content
 									var list=[
 										{img:'product-slide-thumb1.jpg'},
 										{img:'product-slide-thumb2.jpg'},
+										{img:'product-slide-thumb3.jpg'},
+										{img:'product-slide-thumb4.jpg'},
+										{img:'product-slide-thumb5.jpg'},
+										{img:'product-slide-thumb6.jpg'},
+										{img:'product-slide-thumb7.jpg'},
 									]
 								each item in list
 									.product-thumb-slider__item
@@ -49,33 +57,41 @@ block content
 							.product-slider.js-product-slider
 								-
 									var list=[
-										{img:'product-slide1.jpg'},
-										{img:'product-slide2.jpg'},
+										{img:'product-slide1.png'},
+										{img:'product-slide2.png'},
+										{img:'product-slide3.png'},
+										{img:'product-slide4.png'},
+										{img:'product-slide5.png'},
+										{img:'product-slide6.png'},
+										{img:'product-slide7.png'},
 									]
 								each item in list
 									.product-slider__item
 										a.product-slider__link(href="assets/img/"+item.img, data-fancybox='images')
 											img(src="assets/img/"+item.img, alt="")
 					
-									.product-slider__item
-										video
-											source(src='movie.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-											source(src='movie.webm' type='video/webm; codecs="vp8, vorbis"')
+								.product-slider__item
+									.product-slider__video
+										iframe.js-product-slider-video(src='https://www.youtube.com/embed/dl16e_mG6hg?enablejsapi=1' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' frameborder='0')
 					
-					.col-6
+					.col-lg-6
 						.cat-detail-info
 							.cat-detail-info__top
-								.cat-detail-info__status
+								.cat-detail-info__status.d-none.d-md-inline-flex
 									+svg('ic-tick','ic-tick', '10', '8')
-									Достаточно
+									|Достаточно
 
 								.rating
-									.rating__content
+									.rating__content(style="width: 60%")
 
 							.cat-detail-info__title
 								h1 Dry Oil Shine Spray GKhair 115 мл.
 
 							.cat-detail-info__text Сухое масло - спрей для блеска
+
+							.cat-detail-info__status.d-md-none
+									+svg('ic-tick','ic-tick', '10', '8')
+									|Достаточно
 
 							.cat-detail-info__price-wrap
 								.counter
@@ -86,24 +102,24 @@ block content
 									.counter__arr
 										+svg('ic-arrow-up','ic-arrow-up', '14', '8')
 
-							.cat-detail-info__price
-								span.cat-detail-info__old-price 1 790 ₽
-								span.cat-detail-info__cur-price 1 380 ₽
+								.cat-detail-info__price
+									span.cat-detail-info__old-price 1 790 ₽
+									span.cat-detail-info__cur-price 1 380 ₽
 
 							.cat-detail-info__btn
 								a.btn.btn_border.btn_small(href='#') В корзину
 								a.btn.btn_border.btn_small.btn_grey(href='#') Купить в 1 клик
-								a(href="#").cat-item__wish
+								a(href="#").cat-detail-info__wish
 									+svg('ic-heart','ic-heart', '20', '20')
 
 
 							.cat-advant
 								-
 									var list=[
-										{icon:'ic-delivery', icon_width:'26', icon_height:'18', text_2:'Бесплатная доставка', text_3:'по России от 3990 руб.'}
-										{icon:'ic-price-tag', icon_width:'26', icon_height:'26', text_2:'Скидка 5%', text_3:'при оплате картой на сайте'}
-										{icon:'ic-garantee', icon_width:'20', icon_height:'25', text_2:'Гарантия'}
-										{icon:'ic-present', icon_width:'26', icon_height:'26', text_1:'', text_2:'', text_3:''}
+										{icon:'ic-delivery', icon_width:'26', icon_height:'18', text_2:'Бесплатная доставка', text_3:'по России от 3990 руб.'},
+										{icon:'ic-price-tag', icon_width:'26', icon_height:'26', text_2:'Скидка 5%', text_3:'при оплате картой на сайте'},
+										{icon:'ic-garantee', icon_width:'20', icon_height:'25', text_2:'Гарантия'},
+										{icon:'ic-present-stroke', icon_width:'26', icon_height:'26', text_1:'Две миниатюры ', text_2:'в подарок', text_3:'с любой покупкой'},
 									]
 								each item in list
 									.cat-advant__item
@@ -126,11 +142,11 @@ block content
 			
 			.cat-detail-data
 				.row
-					.offset-2.col-8
+					.offset-lg-2.col-lg-8
 						.unwrap-block.js-unwrap-block
 							.unwrap-block__head.js-unwrap-head
 								.unwrap-block__title Описание
-								.unwrap-block__btn.js-unwrap-block-btn
+								.unwrap-block__btn
 									+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
 							.unwrap-block__content.js-unwrap-content
@@ -143,18 +159,18 @@ block content
 						.unwrap-block.js-unwrap-block
 							.unwrap-block__head.js-unwrap-head
 								.unwrap-block__title Применение
-								.unwrap-block__btn.js-unwrap-block-btn
+								.unwrap-block__btn
 									+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
 							.unwrap-block__content.js-unwrap-content
-								video
-									source(src='movie.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-									source(src='movie.webm' type='video/webm; codecs="vp8, vorbis"')
+								.video
+									.video__content
+										iframe(src='https://www.youtube.com/embed/dl16e_mG6hg?enablejsapi=1' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' frameborder='0')
 						
 						.unwrap-block.js-unwrap-block
 							.unwrap-block__head.js-unwrap-head
 								.unwrap-block__title Отзывы о товаре
-								.unwrap-block__btn.js-unwrap-block-btn
+								.unwrap-block__btn
 									+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
 							.unwrap-block__content.js-unwrap-content Отзывы
@@ -162,7 +178,7 @@ block content
 						.unwrap-block.js-unwrap-block
 							.unwrap-block__head.js-unwrap-head
 								.unwrap-block__title Ингридиенты
-								.unwrap-block__btn.js-unwrap-block-btn
+								.unwrap-block__btn
 									+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
 							.unwrap-block__content.js-unwrap-content Ингридиенты

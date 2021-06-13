@@ -1,91 +1,42 @@
-// /*-------------- unwrap-block -----------------*/
-// .unwrap-block{
-// 	background: #fff;
-// 	padding: 35px 32px 30px;
-// 	margin-bottom: 40px;
+/*-------------- unwrap-block -----------------*/
+.unwrap-block{
+	&__head{
+		display: flex;
+		justify-content: space-between;
+		@include font(normal, normal, 2.2rem, 1.3, $color-text);
+		padding: 20px;
+		border-bottom: 1px solid #dbdbdb;
+		position:relative;
+		cursor:pointer;
+	}
 
-// 	&__head{
-// 		display: flex;
-// 		justify-content: space-between;
-// 		@include font(normal, bold, 1.8rem, 1.3, $color-text);
-// 		position:relative;
-// 	}
-
-// 	&__btn{
-// 		display: inline-flex;
-// 		align-items: center;
-// 		justify-content: center;
-// 		flex: 0 0 48px;
-// 		width: 48px;
-// 		height: 48px;
-// 		border-radius: 50%;
-// 		border: 2px solid $color-blue;
-// 		margin-left: 20px;
-// 		margin-top: -10px;
-// 		transition: all 0.2s ease 0s;
-// 		cursor:pointer;
+	&__btn{
+		margin-left: 20px;
 		
-// 		.icon{
-// 			fill: $color-blue;
-// 			transition: all 0.2s ease 0s;
-// 		}
+		.icon{
+			fill: $color-grey;
+			transition: all 0.2s ease 0s;
+		}
+	}
 
-// 		.ic-minus{display: none;}
-// 	}
+	&.opened &__head{border-color: $color-orange;}
+	&.opened &__btn .icon{
+		fill: $color-orange;
+		transform: rotate(180deg);
+	}
 
-// 	&__btn:hover,
-// 	&.opened &__btn{
-// 		border-color: $color-red;
-// 		.icon{fill: $color-red;}
-// 	}
+	&__content{
+		display: none;
+		padding: 23px 20px;
+		@include font(normal, normal, 1.6rem, 1.625, #000);
 
-// 	&.opened .ic-minus{display: inline-block;}
-// 	&.opened .ic-plus{display: none;}
+		p:last-child{margin-bottom: 0;}
+	}
+}
 
-// 	&__content{
-// 		display: none;
-// 		border-top: 1px solid $color-light-grey;
-// 		margin-top: 20px;
-// 		padding-top: 30px;
-// 		@include font(normal, 300, 1.6rem, 1.625, $color-text);
-
-// 		p:last-child{margin-bottom: 0;}
-// 	}
-
-// 	&__subtitle{
-// 		@include font(normal, bold, 1.6rem, 1.625, $color-text);
-// 		margin-bottom: 17px;
-// 	}
-// }
-
-// @media (max-width: 767px) {
-// 	.unwrap-block{
-// 		padding: 28px 17px;
-// 		margin-bottom: 16px;
-
-// 		&__title{font-size: 1.6rem;}
-
-// 		&__btn{
-// 			flex: 0 0 30px;
-// 			width: 30px;
-// 			height: 30px;
-// 			margin-top: 0;
-
-// 			.icon{
-// 				max-width: 12px;
-// 				max-height: 12px;
-// 			}
-// 		}
-
-// 		&__subtitle,
-// 		&__content{
-// 			font-size: 1.4rem;
-// 			line-height: 1.7;
-// 		}
-
-// 		&__content{padding-top: 20px;}
-// 		&__subtitle{margin-bottom: 10px;}
-
-// 		& + .btn-more{margin-top: 35px;}
-// 	}
-// }
+@media (max-width: 767px) {
+	.unwrap-block{
+		&__head{padding: 15px 0;}
+		&__content{padding: 15px 0;}
+	}
+}

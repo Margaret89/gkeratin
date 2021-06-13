@@ -97,6 +97,7 @@
 
 	&__status{
 		@include font(normal, normal, 1.4rem, 1.375, $color-grey);
+		padding: 5px;
 
 		.icon{
 			flex: 0 0 10px;

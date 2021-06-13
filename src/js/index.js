@@ -44,7 +44,7 @@ if($('.js-top-slider').length){
 		vertical: true,
 		appendArrows: $('.js-top-slider-arr'),
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_up"><svg class="icon ic-arrow-up" width="46" height="24"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-up"></use></svg></button>',
-		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-down" width="46" height="24"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use></svg></button>',
+		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_down"><svg class="icon ic-arrow-down" width="46" height="24"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use></svg></button>',
 		responsive: [
 			{
 				breakpoint: 768,
@@ -236,17 +236,87 @@ if($('.js-slider-range').length){
 	});
 }
 
-// // unwrap block
-// if($('.js-unwrap-block').length){
-// 	$('.js-unwrap-block-btn').on('click',function(event){
-// 		event.preventDefault();
-// 		var $parent = $(this).parents('.js-unwrap-block');
+// unwrap block
+if($('.js-unwrap-block').length){
+	$('.js-unwrap-head').on('click',function(event){
+		event.preventDefault();
+		var $parent = $(this).parents('.js-unwrap-block');
 		
-// 		$parent.toggleClass('opened');
-// 		if($parent.hasClass('opened')){
-// 			$parent.children('.js-unwrap-content').slideDown(400);
-// 		}else{
-// 			$parent.children('.js-unwrap-content').slideUp(400);
-// 		}
-// 	});
-// }
+		$parent.toggleClass('opened');
+		if($parent.hasClass('opened')){
+			$parent.children('.js-unwrap-content').slideDown(400);
+		}else{
+			$parent.children('.js-unwrap-content').slideUp(400);
+		}
+	});
+}
+
+// Слайдер продукта на детальной каталога
+if($('.js-product-slider').length){
+	$('.js-product-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.js-product-thumb-slider',
+		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="16" height="30"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
+		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="16" height="30"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		responsive: [
+			{
+			  breakpoint: 768,
+			  settings: {
+				arrows: true,
+				fade: false,
+			  }
+			},
+		]
+	});
+
+	$('.js-product-thumb-slider').slick({
+		vertical: true,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.js-product-slider',
+		focusOnSelect: true,
+		prevArrow: '<button id="prev" type="button" class="product-arr product-arr_up"><svg class="icon ic-arrow-up" width="20" height="11"><use xlink:href="/assets/sprites/sprite.svg#ic-arrow-up"></use></svg></button>',
+		nextArrow: '<button id="next" type="button" class="product-arr product-arr_down"><svg class="icon ic-arrow-down" width="20" height="11"><use xlink:href="/assets/sprites/sprite.svg#ic-arrow-down"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 1260,
+				settings: {
+					slidesToShow: 3,
+					vertical: true,
+					arrows: true,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 4,
+					vertical: true,
+					arrows: true,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4,
+					vertical: false,
+					arrows: false,
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 3,
+					vertical: false,
+					arrows: false,
+				}
+			},
+		]
+	});
+
+	$('.js-product-slider').on("afterChange", function(event, slick, currentSlide, nextSlide){
+		document.querySelector('.js-product-slider-video').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+	});
+}

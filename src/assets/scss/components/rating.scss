@@ -1,36 +1,18 @@
-// /*-------------- rating -----------------*/
-// .rating-wrap{
-// 	display: inline-flex;
-// 	align-items: center;
+/*-------------- rating -----------------*/
+.rating{
+	display: inline-block;
+	vertical-align: top;
+	width: 110px;
+	height: 22px;
+	background: url(../img/stars.png) repeat-x 0 0;
+	position: relative;
 
-// 	&__num{
-// 		@include font(normal, 300, 1.6rem, 1.2, $color-text);
-// 		margin-left: 3px;
-// 	}
-// }
-
-// .rating{
-// 	display: inline-block;
-// 	vertical-align: top;
-// 	width: 100px;
-// 	height: 20px;
-// 	background: url(../img/stars.png) repeat-x 0 0;
-// 	position: relative;
-
-// 	&__content{
-// 		width: 0;
-// 		height: 100%;
-// 		background: url(../img/stars.png) repeat-x 0 -20px;
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 	}
-
-// 	&_big{
-// 		width: 120px;
-// 		height: 24px;
-// 		background: url(../img/stars-big.png) repeat-x 0 0;
-// 	}
-
-// 	&_big &__content{background: url(../img/stars-big.png) repeat-x 0 -24px;}
-// }
+	&__content{
+		width: 0;
+		height: 100%;
+		background: url(../img/stars.png) repeat-x 0 -22px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

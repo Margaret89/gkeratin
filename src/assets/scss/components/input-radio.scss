@@ -19,10 +19,9 @@
 		width: 18px;
 		height: 18px;
 		border-radius: 50%;
-		border: 2px solid $color-orange;
+		border: 1px solid #dbdbdb;
 		background: #fff;
 		position: relative;
-		// margin-top: 2px;
 	}
 
 	&__mark::after{
@@ -41,5 +40,6 @@
 
 	&__text{margin-left: 10px;}
 
+	input[type=radio]:checked + &__label &__mark{border-color: $color-orange;}
 	input[type=radio]:checked + &__label &__mark::after{display: inline-block;}
 }
