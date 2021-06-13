@@ -1,0 +1,79 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Салонам';
+	- var h1 = 'Салонам';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Салонам'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.salon-info
+		.container
+			.row
+				.col-12
+					.visit-card
+						.visit-card__content
+							.visit-card__title Полная гамма салонных процедур с кератином Juvexin
+							.visit-card__text с индивидуальным решением для каждого типа волос
+
+						.visit-card__img
+							img(src="assets/img/visit-card.png", alt="")
+			.row
+				.offset-md-1.col-md-10
+					.salon-info__text
+						p Компания GKERATIN является официальными представителям и импортерам бренда GKhair в России с 2011 года. Наша миссия передать знания и предоставить инструменты для успешной работы в салонном бизнесе. Сотрудничать с нами – это возможность выйти на новый профессиональный уровень и предоставить клиентам уникальные салонные процедуры и домашний уход.
+	
+	section.salon
+		.container
+			
+			-
+				var list=[
+					{
+						title:'Система окрашивания',
+						sub:[
+							{img:'salon1.jpg', title:'Cream Color Juvexin', text:'Состав для идеальной гладкости'},
+							{img:'salon2.jpg', title:'Осветляющие продукты', text:'Состав для увлажнения, убирает пушистость, сокращает время укладки'},
+							{img:'salon3.jpg', title:'Cream Developer Juvexin', text:'Состав для кератиновой реконструкции и разглаживания'},
+							{img:'salon4.jpg', title:'Shield Additivе', text:'Защитная добавка'},
+							{img:'salon5.jpg', title:'Color Sealing', text:'Запечатывание цвета'},
+							{img:'salon6.jpg', title:'Маска Lock Me Color', text:'Фиксация цвета'},
+						]
+					},
+					{
+						title:'Салонный уход',
+						sub:[
+							{img:'salon1.jpg', title:'Cream Color Juvexin', text:'Состав для идеальной гладкости'},
+							{img:'salon2.jpg', title:'Осветляющие продукты', text:'Состав для увлажнения, убирает пушистость, сокращает время укладки'},
+							{img:'salon3.jpg', title:'Cream Developer Juvexin', text:'Состав для кератиновой реконструкции и разглаживания'},
+							{img:'salon4.jpg', title:'Shield Additivе', text:'Защитная добавка'},
+							{img:'salon5.jpg', title:'Color Sealing', text:'Запечатывание цвета'},
+						]
+					}
+				]
+
+			each sect in list
+				.salon__sect
+					.row
+						.col-12
+							.salon__title= sect.title
+
+					.salon__list
+						.row
+							each item in sect.sub
+								.col-6.col-lg-4
+									.salon-item
+										.salon-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+										.salon-item__content
+											.salon-item__title
+												a(href="#")= item.title
+
+											.salon-item__text= item.text
