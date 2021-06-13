@@ -1,10 +1,13 @@
-import {$, noUiSlider} from './common';
+import {$, noUiSlider, Inputmask} from './common';
 
 var widthWindow = $(window).width();
 
 $(window).on('resize', function(){
 	widthWindow = $(window).width();
 });
+
+// Маска для телефона
+Inputmask('+7 (999) 999-9999').mask('.js-phone');
 
 // move-up
 $(window).on('scroll', function(){
