@@ -1,0 +1,44 @@
+/*-------------- lk -----------------*/
+.lk-sect-item{
+	display: flex;
+	align-items: center;
+	height: calc(100% - 30px);
+	margin-bottom: 30px;
+	border: 8px solid #f5f5f5;
+	transition: border 0.2s ease 0s;
+	text-decoration: none;
+	padding: 20px;
+
+	&__img{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 50px;
+		margin-right: 22px;
+	}
+
+	&__text{
+		max-width: 120px;
+		@include font(normal, normal, 1.8rem, 1.2, #000);
+	}
+
+	&:hover{border-color: #ffe6cb;}
+}
+
+@media (max-width: 991px) {
+	.lk-sect-item{
+		padding: 10px;
+
+		&__img{flex: 0 0 40px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.lk-sect-item{
+		height: auto;
+		padding: 20px;
+		margin-bottom: 10px;
+
+		&__img{flex: 0 0 50px;}
+	}
+}

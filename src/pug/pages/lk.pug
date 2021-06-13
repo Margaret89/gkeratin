@@ -1,0 +1,49 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Личный кабинет';
+	- var h1 = 'Личный кабинет';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Личный кабинет'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+		section.lk-page
+			.container
+				.row
+					.col-md-4.col-lg-3
+						ul.lk-menu
+							-
+								var list=[
+									{text:'Мой кабинет', status:'active'},
+									{text:'Отложенные товары'},
+									{text:'Личные данные'},
+									{text:'История заказов'},
+									{text:'Выйти'},
+								]
+
+							each item in list
+								li.lk-menu__item(class=item.status?'active':'')
+									a(href="#").lk-menu__link= item.text
+					.col-md-8.col-lg-9
+						.lk-sect
+							.row
+								-
+									var list=[
+										{img:'packet.png', text:'Отложенные товары'},
+										{img:'profile.png', text:' Личные данные'},
+										{img:'list.png', text:'История заказов'},
+									]
+								each item in list
+									.col-md-6.col-xl-4
+										a(href="#").lk-sect-item
+											.lk-sect-item__img
+												img(src="assets/img/"+item.img, alt="")
+											.lk-sect-item__text= item.text

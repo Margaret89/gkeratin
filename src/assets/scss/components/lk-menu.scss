@@ -1,0 +1,50 @@
+/*-------------- lk-menu -----------------*/
+.lk-menu{
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&{
+		border: 1px solid #dbdbdb;
+		padding: 28px 0;
+	}
+
+	&__item{
+		padding: 0 30px;
+		position: relative;
+	}
+
+	&__item.active::before{
+		content: '';
+		display: inline-block;
+		width: 6px;
+		height: 100%;
+		background: $color-orange;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__item:not(:last-child){margin-bottom: 10px;}
+
+	&__link{
+		@include font(normal, normal, 1.6rem, 1.5, $color-grey);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+	
+	&__link:hover,
+	&__item.active &__link{
+		color: #000;
+	}
+}
+
+@media (max-width: 767px) {
+	.lk-menu{
+		padding: 35px 0;
+		margin-bottom: 28px;
+
+		&__item:not(:last-child){margin-bottom: 16px;}
+	}
+}
