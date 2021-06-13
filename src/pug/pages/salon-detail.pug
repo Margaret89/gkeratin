@@ -1,0 +1,98 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Салонам детальная';
+	- var h1 = 'Cream Color Juvexin';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Салонам'},
+			{href:'#',name:'Cream Color Juvexin'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	.salon-detail
+		section.salon-detail__top
+			.container
+				.row
+					.col-lg-5
+						.salon-detail__img
+							img(src="assets/img/salon-detail.jpg", alt="")
+
+					.col-lg-7.offset-xl-1.col-xl-6
+						.salon-detail__info
+							.salon-param
+								.salon-param__item
+									span.salon-param__label Доступный объем:
+									| 
+									span.salon-param__val 100 мл
+
+							.salon-advant
+								.salon-advant__title Преимущества:
+
+								-
+									var list=[
+										{label:'Формула инновационного красителя', text:'Juvexin Cream Color позволяет не только достичь глубокого цвета, но и обеспечить интенсивный уход во время окрашивания.'},
+										{label:'Уникальная формула красителя', text:'содержит кератиновый комплекс Juvexin и керамиды. Закрашивает седину на 100%. Придает ослепительный блеск и гладкость волосам.'},
+										{label:'Экономичная формула смешивания:', text:'от 1 : 1.5 и 1 : 2. Все оттенки Juvexin Cream Color можно смешивать между собой для получения идеального цвета.'},
+										{label:'Богатая палитра', text:'- 87 оттенков от ярких креативных до мягких натуральных тонов.'},
+									]
+
+								.salon-advant__list
+									each item in list
+										.salon-advant__item
+											span.salon-advant__label= item.label
+											| 
+											span.salon-advant__val= item.text
+							
+		section.salon-about.bg-grey
+			.container
+				.row
+					.col-md-6
+						.salon-about__content
+							.h3 Уникальная формула:
+
+							p Насыщенный уникальным кератиновым комплексом Juvexin и керамидами, этот краситель позволит избавиться от повреждений волос и заметно укрепить их структуру одновременно с процедурой окрашивания.
+							p <b>Juvexin</b> – это кератин натурального происхождения, состоящий белков и пептидов, направленный на глубокую реконструкцию волос.
+							p Керамиды обеспечивают увлажнение и позволяют кератину проникнуть внутрь волоса для укрепления. Керамиды уменьшают общую пористость волос и усиливают блеск.
+							p Для наилучшей защиты в процессе окрашивания рекомендуем использовать Shield Additive как защитную добавку.
+
+					.col-md-6
+						.salon-about__img
+							img(src="assets/img/salon-desc.png", alt="")
+		
+		section.steps
+			.container
+				.row
+					.col-12
+						.h3 Применение:
+
+						p Работает в с окислителем Juvexin Cream Developer
+
+
+						.steps__list
+							-
+								var list=[
+									{num:'1', text:'Смешайте крем краситель с окислителем в пропорции 1:1.5 либо 1:2, до однородной консистенции'},
+									{num:'2', text:'Нанести кистью на волосы'},
+									{num:'3', text:'Выдержать необходимое время, в зависимости от поставленной задачи и результата, от 15 до 50 минут'},
+									{num:'4', text:'Смыть шампунем и кондиционером линии SHIELD'},
+									{num:'5', text:'Приступить к укладке'},
+								]
+
+							each item in list
+								.steps__item
+									.steps__num= item.num
+									.steps__text= item.text
+
+		section.salon-desc
+			.container
+				.row
+					.col-12
+						.h3 Уход:
+						P Используйте линию домашнего ухода Juvexin Shield или Moisturizing Color Protection, для продления цвета и дополнительного ухода окрашенных волос
