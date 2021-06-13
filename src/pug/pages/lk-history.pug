@@ -1,0 +1,82 @@
+extends ../layout/main
+
+block variables
+	- var title = 'История заказов';
+	- var h1 = 'История заказов';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Личный кабинет'},
+			{href:'#',name:'История заказов'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+		section.lk-page
+			.container
+				.row
+					.col-md-4.col-lg-3
+						ul.lk-menu
+							-
+								var list=[
+									{text:'Мой кабинет'},
+									{text:'Отложенные товары'},
+									{text:'Личные данные'},
+									{text:'История заказов', status:'active'},
+									{text:'Выйти'},
+								]
+
+							each item in list
+								li.lk-menu__item(class=item.status?'active':'')
+									a(href="#").lk-menu__link= item.text
+
+					.col-md-8.col-lg-9
+						table.table-basket
+							thead
+								tr
+									th.table-basket__col-img
+									th.table-basket__col-title
+										.table-basket__head.table-basket__head_left Название товара
+									th
+										.table-basket__head Цена
+									th
+										.table-basket__head кол-во
+									th
+										.table-basket__head Всего
+									th
+										.table-basket__head Статус
+
+							tbody
+								-
+									var list=[
+										{img:'basket1.jpg', title:'Расческа GKhair Vent Brush 3.5', price:'1 380 ₽', count:'2 шт.', sum:'2 760 ₽', status:'Получено'},
+										{img:'basket2.jpg', title:'Dry Oil Shine Spray GKhair 115 мл', price:'1 380 ₽', count:'2 шт.', sum:'2 760 ₽', status:'В пути'},
+										{img:'basket1.jpg', title:'Расческа GKhair Vent Brush 3.5', price:'1 380 ₽', count:'2 шт.', sum:'2 760 ₽', status:'Отказ', status_color:'red'},
+										{img:'basket2.jpg', title:'Dry Oil Shine Spray GKhair 115 мл', price:'1 380 ₽', count:'2 шт.', sum:'2 760 ₽', status:'Отказ', status_color:'red'},
+									]
+
+								each item in list
+									tr
+										td.table-basket__col-img
+											a(href="#").table-basket__img
+												img(src="assets/img/"+item.img, alt="")
+
+										td.table-basket__col-title
+											.table-basket__title
+												a(href="#")= item.title
+
+										td
+											.table-basket__price 1&nbsp;380&nbsp;₽
+
+										td
+											.table-basket__count 2&nbsp;шт.
+
+										td
+											.table-basket__price 2&nbsp;760&nbsp;₽
+
+										td
+											.table-basket__status(class=item.status_color?'table-basket__status_'+item.status_color:'')= item.status

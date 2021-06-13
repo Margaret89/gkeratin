@@ -1,0 +1,115 @@
+/*-------------- basket -----------------*/
+.table-basket{
+	width: 100%;
+	@include font(normal, normal, 1.6rem, 1.625, #000);
+	margin-top: -5px;
+
+	&__col-img{width: 95px;}
+
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+		height: 80px;
+
+		img{max-height: 100%;}
+	}
+
+	th{
+		vertical-align: middle;
+		padding: 0 15px 16px;
+		position: relative;
+	}
+
+	td{
+		vertical-align: middle;
+		text-align: center;
+		padding: 20px 15px;
+	}
+
+	td:first-child{padding-left: 0;}
+
+	&__head{
+		height: 100%;
+		@include font(normal, normal, 1.4rem, 1.2, $color-grey);
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__head::after{
+		content: '';
+		width: calc(100% - 30px);
+		height: 1px;
+		background: #ebebeb;
+		position: absolute;
+		bottom: 0;
+		left: 15px;
+	}
+
+	&__head_left{text-align: left;}
+
+	tr{border-bottom: 1px solid #ebebeb;}
+	thead tr{border-bottom: 0;}
+
+	&__title{
+		@include font(normal, normal, 1.6rem, 1.625, #000);
+		text-align: left;
+
+		a{
+			color: #000;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-orange;}
+	}
+
+	&__price,
+	&__count{
+		font-weight: bold;
+	}
+
+	&__status{color: $color-green;}
+	&__status_red{color: #ff3333;}
+}
+
+@media (max-width: 991px) {
+	.table-basket{
+		&,
+		tbody,
+		td{
+			display: block;
+		}
+
+		td{padding: 3px 15px;}
+
+		thead{display: none;}
+
+		tr{
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -15px;
+			margin-right: -15px;
+			padding: 10px 0;
+			border-bottom: 0;
+			position: relative;
+		}
+
+		td:first-child{padding-left: 15px;}
+		&__col-img{width: 110px;}
+
+		tr::after{
+			content: '';
+			display: block;
+			width: calc(100% - 30px);
+			height: 1px;
+			background: #ebebeb;
+			position: absolute;
+			bottom: 0;
+			left: 15px;
+		}
+
+		td.table-basket__col-title{width: 100%;}
+	}
+}
