@@ -36,12 +36,29 @@
 		margin: 0;
 		box-shadow: none;
 	}
+
+	&_big{height: 5rem;}
+	&_big &__arr{width: 40px;}
+
+	&_big input[type="text"]{
+		width: 5rem;
+		font-size: 1.8rem;
+	}
 }
 
 @media (max-width: 991px) {
 	.counter{
-		height: 3.5rem;
-		
-		input[type="text"]{font-size: 1.3rem;}
+		&,
+		&_big{
+			height: 3.5rem;
+		}
+
+		&_big &__arr{width: 25px;}
+
+		input[type="text"],
+		&_big input[type="text"]{
+			width: 4rem;
+			font-size: 1.3rem;
+		}
 	}
 }

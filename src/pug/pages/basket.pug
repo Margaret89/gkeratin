@@ -1,0 +1,336 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Корзина';
+	- var h1 = 'Корзина';
+	- var menu = false;
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Корзина'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+		section.basket
+			.container
+				.row
+					.col-12
+						table.table-basket
+							thead
+								tr
+									th.table-basket__col-img
+									th.table-basket__col-title
+										.table-basket__head.table-basket__head_left Название товара
+									th
+										.table-basket__head Цена
+									th
+										.table-basket__head кол-во
+									th
+										.table-basket__head Всего
+									th.table-basket__col-del
+
+							tbody
+								-
+									var list=[
+										{img:'basket-big1.jpg', title:'Dry Oil Shine Spray GKhair 115 мл', price:'1 380 ₽', count:'2', sum:'2 760 ₽'},
+										{img:'basket-big2.jpg', title:'Moisturizing Box', price:'2 720 ₽', count:'1.', sum:'2 720 ₽'},
+									]
+
+								each item in list
+									tr
+										td.table-basket__col-img
+											a(href="#").table-basket__img
+												img(src="assets/img/"+item.img, alt="")
+
+										td.table-basket__col-title
+											.table-basket__title
+												a(href="#")= item.title
+
+										td
+											.table-basket__price 1&nbsp;380&nbsp;₽
+
+										td
+											.counter.counter_big
+												.counter__arr
+													+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+												.counter__field
+													input(type="text", value="2")
+												.counter__arr
+													+svg('ic-arrow-up','ic-arrow-up', '14', '8')
+
+										td
+											.table-basket__price 2&nbsp;760&nbsp;₽
+
+										td.table-basket__col-del
+											span.table-basket__del
+												+svg('ic-close','ic-close', '12', '12')
+
+						.basket-total
+							form.coupon
+								.coupon__label Введите код купона для скидки:
+
+								.coupon__content
+									.coupon__field
+										input(type="text")
+										button(type="submit")
+											+svg('ic-arr-right','ic-arr-right', '13', '11')
+
+									.coupon__info
+										.coupon__text Цена со скидкой:
+										.coupon__price 2 350 ₽
+								
+							.basket-total__content
+								.basket-total__res Итого: 
+									span.basket-total__sum 2&nbsp;720&nbsp;₽
+
+								a.btn.btn_border.btn_grey(href='#') Быстрый заказ
+								a.btn.btn_border(href='#') Оформить заказ
+
+		section.cat-list-slider-wrap
+			.container
+				.row
+					.col-12
+						.h1.text-center Выберите подарок
+
+						.cat-list-slider.js-cat-list-slider
+							-
+								var list=[
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'0 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										price:'0 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										price:'0 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog4.jpg',
+										title:'Cashmere GKhair 50 мл.',
+										text:'Крем - кашемир, сыворотка',
+										status:'Много',
+										price:'0 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+								]
+							each item in list
+								.cat-item
+									.cat-item__img-wrap
+										.sticker
+											each sticker in item.sticker
+												.sticker__item
+													.sticker__bg(class=sticker.color?'sticker__bg_'+sticker.color:'')
+														if(sticker.icon == 'ic-sale')
+															+svg('bg-sale','bg-sale', '50', '50')
+														else
+															+svg('bg-sticker','bg-sticker', '50', '50')
+
+													if(sticker.text)
+														.sticker__text=sticker.text
+
+													if(sticker.icon)
+														.sticker__icon
+															+svg(sticker.icon, sticker.icon, sticker.icon_width, sticker.icon_height)
+
+										a(href="#").cat-item__img
+											img(src="assets/img/"+item.img, alt="")
+
+
+									.cat-item__content
+										.cat-item__info
+											.cat-item__title
+												a(href="#")= item.title
+
+											.cat-item__text= item.text
+
+										.cat-item__bottom
+											//- .cat-item__status
+											//- 	+svg('ic-tick','ic-tick', '10', '8')
+											//- 	=item.status
+
+											.cat-item__price
+												span.cat-item__cur-price= item.price
+
+
+									.cat-item__action
+										//- .cat-item__count
+										//- 	.counter
+										//- 		.counter__arr
+										//- 			+svg('ic-arrow-down','ic-arrow-down', '14', '8')
+										//- 		.counter__field
+										//- 			input(type="text", value="1")
+										//- 		.counter__arr
+										//- 			+svg('ic-arrow-up','ic-arrow-up', '14', '8')
+
+										.cat-item__btn
+											a.btn.btn_border.btn_small(href='#') В корзину
+											//- a(href="#").cat-item__wish
+											//- 	+svg('ic-heart','ic-heart', '20', '20')
+						
+		section.cat-list-slider-wrap
+			.container
+				.row
+					.col-12
+						.h1.text-center Персональные рекомендации
+
+						.cat-list-slider.js-cat-list-slider
+							-
+								var list=[
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog4.jpg',
+										title:'Cashmere GKhair 50 мл.',
+										text:'Крем - кашемир, сыворотка',
+										status:'Много',
+										price:'1 700 ₽',
+										sticker:[
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog2.jpg',
+										title:'VolumizeHer Spray GKhair 30 мл.',
+										text:'Спрей для создания объёма',
+										status:'Мало',
+										price:'580 ₽',
+										sticker:[
+											{icon:'ic-present', icon_width:'20', icon_height:'18', color:'purple'},
+										]
+									},
+
+									{
+										img:'catalog3.jpg',
+										title:'Moisturizing Box',
+										text:'Набор увлажняющий',
+										status:'Достаточно',
+										price:'2 720 ₽',
+										sticker:[
+											{text:'new', color: 'green'},
+											{icon:'ic-sale', icon_width:'23', icon_height:'18', color: 'yellow'},
+										]
+									},
+
+									{
+										img:'catalog4.jpg',
+										title:'Cashmere GKhair 50 мл.',
+										text:'Крем - кашемир, сыворотка',
+										status:'Много',
+										price:'1 700 ₽',
+										sticker:[
+											{icon:'ic-like', icon_width:'20', icon_height:'20', color: 'pink'},
+										]
+									},
+
+									{
+										img:'catalog1.jpg',
+										title:'Dry Oil Shine Spray GKhair 115 мл.',
+										text:'Сухое масло - спрей для блеска',
+										status:'Достаточно',
+										price:'1 215 ₽',
+										sticker:[
+											{text:'хит'},
+										]
+									},
+								]
+							each item in list
+								.cat-item
+									.cat-item__img-wrap
+										.sticker
+											each sticker in item.sticker
+												.sticker__item
+													.sticker__bg(class=sticker.color?'sticker__bg_'+sticker.color:'')
+														if(sticker.icon == 'ic-sale')
+															+svg('bg-sale','bg-sale', '50', '50')
+														else
+															+svg('bg-sticker','bg-sticker', '50', '50')
+
+													if(sticker.text)
+														.sticker__text=sticker.text
+
+													if(sticker.icon)
+														.sticker__icon
+															+svg(sticker.icon, sticker.icon, sticker.icon_width, sticker.icon_height)
+
+										a(href="#").cat-item__img
+											img(src="assets/img/"+item.img, alt="")
+
+
+									.cat-item__content
+										.cat-item__info
+											.cat-item__title
+												a(href="#")= item.title
+
+											.cat-item__text= item.text
+
+										.cat-item__bottom
+											.cat-item__status
+												+svg('ic-tick','ic-tick', '10', '8')
+												=item.status
+
+											.cat-item__price
+												span.cat-item__cur-price= item.price

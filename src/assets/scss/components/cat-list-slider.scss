@@ -113,6 +113,8 @@
 		margin-top: 12px;
 	}
 
+	&__price:first-child{margin-top: 0;}
+
 	&__cur-price,
 	&__old-price{
 		white-space: nowrap;
@@ -132,14 +134,9 @@
 	}
 
 	&__action{
-		display: none;
 		width: 100%;
 		background: #fff;
 		padding: 16px 30px;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		z-index: 11;
 	}
 
 	&__btn{
@@ -154,6 +151,8 @@
 			padding: 0 5px;
 		}
 	}
+
+	&__btn:first-child{margin-top: 0;}
 
 	&__wish{
 		display: inline-flex;
@@ -180,6 +179,14 @@
 	.cat-item{
 		height: calc(100% - 80px);
 		margin-bottom: 80px;
+
+		&__action{
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 11;
+		}
 	}
 }
 
