@@ -16,7 +16,7 @@
 		height: 6rem;
 		width: 100%;
 		font-family: $font-site;
-		@include font(normal, normal, 1.6rem, 5.8rem, $color-text);
+		@include font(normal, normal, 1.6rem, 5.8rem, #000);
 		padding: 0 24px;
 		border-radius: 5px;
 		border: 1px solid #ebebeb;
@@ -28,9 +28,10 @@
 	}
 
 	textarea{
-		height: 14.5rem;
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
+		height: 14rem;
+		line-height: 1.5;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 
 	input[type="text"]:focus,

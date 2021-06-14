@@ -1,0 +1,268 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Оформление заказа';
+	- var h1 = 'Оформление заказа';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Оформление заказа'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+		section.order-page
+			form.order
+				.container
+					.row
+						.col-lg-8.col-xl-9.order-2.order-lg-1
+							.order__sect
+								.order__title Войдите или зарегистрируйтесь
+								.order__content
+									.order-auth
+										.order-auth__fields
+											.order__item
+												.order__field
+													input.js-phone(type="text", value="+7 (495) 000-00-00")
+
+											.order__item
+												.order__field
+													input(type="text", placeholder="Введите код подтверждения")
+
+											a.btn.btn_border(href='#') Подтвердить
+
+										.soc-block
+											.soc-block__label Войти через соц. сети:
+
+											.soc-block__list
+												a(href="#").soc-block__item.soc-block__item_fb
+													+svg('ic-fb','ic-fb', '12', '20')
+
+												a(href="#").soc-block__item.soc-block__item_vk
+													+svg('ic-vk','ic-vk', '20', '12')
+
+												a(href="#").soc-block__item.soc-block__item_in
+													+svg('ic-instagram','ic-instagram', '20', '20')
+							
+							.order__sect
+								.order__title Регион доставки
+
+								.order__content
+									.order__delivery
+										.order__item
+											.order__label Тип плательщика
+
+											.order__field
+												.btn-radio-list
+													.btn-radio
+														input(type='radio', id='person1', checked='checked', name="person")
+														label.btn-radio__label(for='person1') Физическое лицо
+
+													.btn-radio
+														input(type='radio', id='person2', name="person")
+														label.btn-radio__label(for='person2') Юридическое лицо
+										
+										.order__item
+											.order__label Местоположение
+
+											.order__field
+												.btn-radio-list
+													.btn-radio
+														input(type='radio', id='city1', checked='checked', name="city")
+														label.btn-radio__label(for='city1') Санкт-Петербург
+
+													.btn-radio
+														input(type='radio', id='city2', name="city")
+														label.btn-radio__label(for='city2') Москва
+
+												.order__search
+													input(type="text", placeholder="Санкт-Петербург, Ленинградская область, Северо-Запад, Россия")
+
+
+										.order__item.order__item_half
+											.order__label Индекс
+
+											.order__field
+												input(type="text", value="190000")
+
+										.order__note Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"
+
+							.order__sect
+								.order__title Доставка
+
+								.order__content
+									.order-delivery
+										-
+											var list=[
+												{
+													title:'Бесконтактная курьерская доставка',
+													text:'Доставка осуществляется в течение 1-2 дня в удобное для вас время.',
+													params:'1',
+													status:'active',
+												},
+												{
+													title:'Доставка курьером',
+													text:'Доставка осуществляется в течение 1-2 дня в удобное для вас время.',
+													params:'1',
+												},
+												{
+													title:'СДЭК (Самовывоз)',
+													text:'Доставка курьерской службой СДЭК.',
+													params:'1',
+												},
+												{
+													title:'Самовывоз из магазина',
+													text:'Вы можете самостоятельно забрать заказ из нашего магазина с 10-00 до 19-00 ежедневно, кроме выходных, Санкт-Петербург, ул. Ефимова, 4а м. Сенная, БЦ, 1 этаж офис 209',
+													params:'2',
+												},
+											]
+										each item, index in list
+											.order-delivery__item
+												if(item.status)
+													input(type='radio', id="delivery"+index, checked="checked", name="delivery")
+												else
+													input(type='radio', id="delivery"+index, name="delivery")
+
+												.order-delivery__icon
+													.input-check
+														label.input-check__label(for="delivery"+index)
+															span.input-check__mark
+																+svg('ic-tick','ic-tick', '10', '8')
+
+												.order-delivery__content
+													.order-delivery__info
+														.order-delivery__title= item.title
+														.order-delivery__text= item.text
+
+													if(item.params == '1')
+														.order-delivery-param
+															.order-delivery-param__item
+																span.order-delivery-param__label Стоимость: 
+																span.order-delivery-param__val <b>200</b> руб.
+
+															.order-delivery-param__item
+																span.order-delivery-param__label Срок доставки: 
+																span.order-delivery-param__val от <b>1</b> до <b>2</b> дней
+																
+													else
+														.order-delivery-param
+															.order-delivery-param__item
+																span.order-delivery-param__label Стоимость: 
+																span.order-delivery-param__val <b>0</b> руб.
+
+							.order__sect
+								.order__title Оплата
+
+								.order__content
+									.card-radio-list
+										-
+											var list=[
+												{img:'money.png', text:'Наличные курьеру', status:'active'},
+												{img:'robokassa.png', text:'RoboKassa'},
+											]
+										each item, index in list
+											.card-radio
+												if(item.status)
+													input(type='radio', id="card"+index, checked="checked", name="payment")
+												else
+													input(type='radio', id="card"+index, name="payment")
+												label.card-radio__label(for="card"+index)
+													.card-radio__img
+														img(src="assets/img/"+item.img, alt="")
+													.card-radio__content
+														span.card-radio__mark
+															+svg('ic-tick','ic-tick', '10', '8')
+														span.card-radio__text= item.text
+
+							.order__sect
+								.order__title Покупатель
+								
+								.order__content
+									.order__list
+										.order__item.order__item_half
+											.order__field
+												input(type="text", placeholder="ФИО")
+
+										.order__item.order__item_half
+											.order__field
+												input(type="email", placeholder="E-mail")
+
+										.order__item
+											.order__field
+												input.js-phone(type="text", placeholder="Телефон")
+
+										.order__item
+											.order__field
+												textarea(placeholder="Адрес доставки")
+
+										.order__item
+											.order__field
+												textarea(placeholder="Комментарий к заказу")
+
+							.order__sect
+								.order__title Товары в заказе
+
+								.order__content
+									table.table-basket.table-basket_small
+										tbody
+											-
+												var list=[
+													{img:'basket-big1.jpg', title:'Расческа GKhair Vent Brush 3.5', price:'1 380 ₽', count:'1 шт.'},
+													{img:'basket-big2.jpg', title:'VolumizeHer Spray 30 мл', price:'1 380 ₽', count:'1 шт.'},
+												]
+
+											each item in list
+												tr
+													td.table-basket__col-img
+														a(href="#").table-basket__img
+															img(src="assets/img/"+item.img, alt="")
+
+													td.table-basket__col-title
+														.table-basket__title
+															a(href="#")= item.title
+
+													td
+														.table-basket__count= item.count
+
+													td
+														.table-basket__price 1&nbsp;380&nbsp;₽
+
+						.col-lg-4.col-xl-3.order-1.order-lg-2
+							.order-res
+								.order-res__title
+									+svg('ic-cart','ic-cart', '20', '20')
+									|Ваш заказ
+
+								.order-res__list
+									.order-res__item
+										.order-res__label Товаров на:
+										.order-res__price
+											.order-res__cur-price 1 909.50 ₽
+											.order-res__old-price 2 140.00 ₽
+
+									.order-res__item
+										.order-res__label Доставка:
+										.order-res__price
+											.order-res__cur-price 200 ₽
+
+									.order-res__item
+										.order-res__label Экономия:
+										.order-res__price
+											.order-res__cur-price.order-res__cur-price_green 100.50 ₽
+
+									.order-res__item
+										.order-res__label Итого:
+										.order-res__price
+											.order-res__cur-price 2 109.50 ₽
+
+								.coupon
+									.coupon__label Применить купон:
+
+									.coupon__content
+										.coupon__field
+											input(type="text")
+											button(type="submit")
+												+svg('ic-arr-right','ic-arr-right', '13', '11')
