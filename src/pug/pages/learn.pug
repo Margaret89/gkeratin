@@ -1,0 +1,253 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Обучение';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Обучение'},
+			{href:'#',name:'Мастер кератинового выпрямления с нуля'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	.learn-detail
+		section.learn-detail-top
+			.container
+				.learn-det-top
+					.row
+						.col-md-7
+							.learn-det-top__content
+								h1 Мастер кератинового выпрямления с&nbsp;нуля
+
+								p На курсе Вы узнаете разницу между разными видами выпрямления. Погрузитесь в строение волос и химическую работу составов. Узнаете нюансы правильного выбора домашнего ухода. Научитесь практическим навыкам качественной работы с составами и опыт работы с профессиональным парикмахерским инструментом.
+
+								span.btn.btn_border.js-link-move(data-move="record") Записаться
+
+						.offset-md-1.col-4.d-none.d-md-block
+							.learn-det-top__img(style="background-image: url(assets/img/learn-about.jpg)")
+
+				.info-tile-list
+					.row
+						-
+							var list=[
+								{icon:'ic-calendar', icon_width:'28', icon_height:'28', label:'Продолжительность:', text:'1 день', img:'ic-calendar.png'},
+								{icon:'ic-people', icon_width:'28', icon_height:'28', label:'Людей в группе:', text:'1-4 человека', img:'ic-people.png'},
+								{icon:'ic-cash', icon_width:'28', icon_height:'22', label:'Стоимость:', text:'8 000 рублей', img:'ic-cash.png'},
+							]
+						each item in list
+							.col-md-6.col-lg-4
+								.info-tile
+									.info-tile__icon
+										img(src="assets/img/"+item.img, alt="")
+
+									.info-tile__content
+										.info-tile__label= item.label
+										.info-tile__text= item.text
+
+
+				.row
+					.col-12
+						table.design-table
+							thead
+								tr
+									th Название
+									th Запись
+									th Время
+									th Цена
+
+							tbody
+								tr
+									td Выпрямление и дисциплина. Составы на основе глиоксиловой кислоты
+									td По записи, онлайн
+									td 11:00-17:00
+									td 1&nbsp;000&nbsp;₽
+
+								tr
+									td Мастера кератинового выпрямления с нуля
+									td По записи, онлайн
+									td 11:00-17:00
+									td 8&nbsp;000&nbsp;₽
+
+								tr
+									td Практикум 
+									td По записи, онлайн
+									td 11:00-17:00
+									td 12&nbsp;000&nbsp;₽
+								tr
+									td Выпрямление и дисциплина. Составы на основе глиоксиловой кислоты
+									td По записи, онлайн
+									td 11:00-17:00
+									td 1&nbsp;500&nbsp;₽
+
+		section.aim.bg-grey
+			.container
+				.row
+					.col-md-5.order-2.order-md-1
+						.aim__img
+							img(src="assets/img/girl-learn.png", alt="")
+
+					.col-md-7.order-1.order-md-2
+						.aim__content
+							.aim__title Обучение подойдет:
+							.aim__text
+								p для тех, кто хочет узнать все подробности о реконструкции и уходе за волосами и сделать это своей профессией. Курс подходит как для новичков так и для продвинутых мастеров.
+
+		section.learn-info
+			.container
+				.row
+					.col-12
+						h3 Темы:
+						p любые два состава из перечисленных брендов для выпрямления:
+
+						ul.list-col
+							li botox
+							li plazma
+							li тотальная реконструкция
+							li ice shine
+							li deep conditioner + the best
+							li deep conditioner( GKhair)/deep mask(Innovatis)
+							li hot miami bombshell/маски Miami bombshell
+		
+		section.presents
+			.container
+				.row
+					.col-12
+						h3 По окончанию курса вы получите:
+
+						.presents__list
+							-
+								var list=[
+									{img:'certificate.png', text_bold:'Три', text:' именных сертификата'},
+									{img:'combo.png', text_bold:'Набор', text:' одного из составов'},
+									{img:'10_sale.png', text_bold:'Скидку 10%', text:' на продукцию'},
+								]
+							.row
+								each item in list
+									.col-md-4
+										.presents__item
+											if(item.img)
+												.presents__img
+													img(src="assets/img/"+item.img, alt="")
+
+											if(item.count)
+												.presents__count 10
+													sup.presents__percent %
+											
+											.presents__content
+												b= item.text_bold
+												=item.text
+
+		section.learn-info
+			.container
+				.row
+					.col-lg-6
+						h3 Программа семинара состоит из теоретического и практического блоков:
+
+					.col-12
+						ul.list-col
+							li Виды составов для выпрямления волос.
+							li Молекулярное и химическое строение волос.
+							li Химический состав выпрямляющих средств разных брендов.
+							li Преимущества наших составов и бренда от других.
+							li Диагностика и грамотный подбор процедуры для клиента.
+							li Мифы и правда о кератине.
+							li Подбор средств из домашней линии для ухода за волосами.
+
+		section.address-block.bg-grey
+			script(src='http://api-maps.yandex.ru/2.1/?lang=ru_RU' type='text/javascript')
+
+			.container
+				.row
+					.col-md-4.order-2.order-md-1
+						.address-block__map
+							#map1.map.js-map(data-id="1", data-coordx='59.926180', data-coordy='30.319736')
+					
+					.offset-md-1.col-md-7.order-1.order-md-2
+						.address-block__content
+							.address-block__title Место проведения:
+							.address-block__text Санкт-Петербург, ул Ефимова д 4-а лит. А, Бизнес Центр 1 этаж, обучающая студия LookLuxe.
+
+		section.info-gallery
+			.container
+				.row
+					.col-md-4
+						.info-gallery__content
+							.info-gallery__title Запишитесь на семинар
+							.info-gallery__phone
+								a(href="tel:+78005050984") 8 800 505-09-84
+							.info-gallery__text WhatsApp Business:
+								a(href="https://wa.me/79523741444")  +7952-374-14-44
+
+							a.info-gallery__img.d-none.d-md-inline-block(href='assets/img/info-gallery1.jpg' data-fancybox='images')
+								img(src="assets/img/info-gallery1.jpg", alt="")
+
+					.col-6.d-md-none
+						a.info-gallery__img(href='assets/img/info-gallery1.jpg' data-fancybox='images')
+							img(src="assets/img/info-gallery1.jpg", alt="")
+
+					.col-6.col-md-4
+						a.info-gallery__img(href='assets/img/gallery2.jpg' data-fancybox='images')
+							img(src="assets/img/gallery2.jpg", alt="")
+
+						a.info-gallery__img(href='assets/img/gallery3.jpg' data-fancybox='images')
+							img(src="assets/img/gallery3.jpg", alt="")
+						
+					.col-md-4.offset-lg-1.col-lg-3
+						.info-gallery__img-wrap
+							a.info-gallery__img(href='assets/img/info-gallery2.jpg' data-fancybox='images')
+								img(src="assets/img/info-gallery2.jpg", alt="")
+							
+							a.info-gallery__img(href='assets/img/info-gallery3.jpg' data-fancybox='images')
+								img(src="assets/img/info-gallery3.jpg", alt="")
+
+	section.bg-grey.form-page.js-to-move(data-move="record")
+		.container
+			.row
+				.col-12
+					form.form-site
+						.form-site__title Записаться на обучение
+
+						.form-site__content
+							.form-site__fields
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Ваше имя", value="Алексан")
+
+								.form-site__item.form-site__item_half
+									select.js-select(data-placeholder="Способ")
+										option
+										option(value="Онлайн") Онлайн
+										option(value="По телефону") По телефону
+
+								.form-site__item.form-site__item_half
+									input.js-phone(type="text", placeholder="Ваш телефон")
+
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Город")
+
+								.form-site__item.form-site__item_half
+									input.js-phone(type="email", placeholder="Эл. почта")
+
+								.form-site__item.form-site__item_half
+									select.js-select(data-placeholder="Мастер")
+										option
+										option(value="Ученик") Ученик
+										option(value="Мастер2") Мастер2
+
+								.form-site__item
+									textarea(placeholder="Доп. информация")
+
+							.form-site__polit
+								.input-check
+									input#polit(type='checkbox', checked="checked")
+									label.input-check__label(for='polit')
+										span.input-check__mark
+											+svg('ic-tick','ic-tick', '10', '8')
+										span.input-check__text Я согласен на обработку 
+											a(href="#") персональных данных
+
+							.form-site__btn
+								button.btn.btn_border Записаться

@@ -77,6 +77,11 @@ ol{list-style-position: inside;}
 ul{padding-left: 20px;}
 li{margin-bottom: 5px;}
 
+.list-col{
+	column-count: 2;
+	column-gap: 30px;
+}
+
 .wrapper{
 	display: flex;
 	flex-direction: column;
@@ -289,4 +294,6 @@ button.btn_small{
 	p{margin-bottom: 2.5rem;}
 
 	.page-head{margin-bottom: 1.5rem;}
+
+	.list-col{column-count: auto;}
 }

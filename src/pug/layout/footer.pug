@@ -85,20 +85,22 @@ footer.footer
 		form.form-site
 			.form-site__title Заказать обратный звонок
 
-			.form-site__item
-				input(type="text", placeholder="Ваше имя")
+			.form-site__content
+				.form-site__fields
+					.form-site__item
+						input(type="text", placeholder="Ваше имя")
 
-			.form-site__item
-				input.js-phone(type="text", placeholder="Ваш телефон")
+					.form-site__item
+						input.js-phone(type="text", placeholder="Ваш телефон")
 
-			.form-site__polit
-				.input-check
-					input#polit(type='checkbox', checked="checked")
-					label.input-check__label(for='polit')
-						span.input-check__mark
-							+svg('ic-tick','ic-tick', '10', '8')
-						span.input-check__text Я согласен на обработку 
-							a(href="#") персональных данных
+				.form-site__polit
+					.input-check
+						input#polit(type='checkbox', checked="checked")
+						label.input-check__label(for='polit')
+							span.input-check__mark
+								+svg('ic-tick','ic-tick', '10', '8')
+							span.input-check__text Я согласен на обработку 
+								a(href="#") персональных данных
 
-			.form-site__btn
-				button.btn.btn_border Отправить
+				.form-site__btn
+					button.btn.btn_border Отправить

@@ -323,3 +323,58 @@ if($('.js-product-slider').length){
 		document.querySelector('.js-product-slider-video').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 	});
 }
+
+// Yandex карта на странице обучения
+if ($('.js-map').length) {
+	// Иницилизация карты
+	ymaps.ready(init);
+
+	function init(){
+		var myMap;
+
+		$('.js-map').each(function() {
+			var coordx = $(this).data('coordx');
+			var coordy = $(this).data('coordy');
+			var idElem =  $(this).data('id');
+
+			myMap = new ymaps.Map("map"+idElem, {
+				center: [coordx, coordy],
+				zoom: 15,
+				controls: []
+			});
+
+			var myPlacemark = new ymaps.Placemark([coordx, coordy] , {},
+			{ iconLayout: 'default#image',
+			// iconImageHref: 'assets/img/mark-map.png',
+			// iconImageSize: [50, 65],
+			// iconImageOffset: [-25, -65] 
+			});
+
+			myMap.geoObjects.add(myPlacemark);
+		});
+	}
+}
+
+// Плавный переход к блоку
+if($('.js-link-move').length){
+	$('.js-link-move').on('click', function() {
+		var posBlock = $('.js-to-move[data-move='+$(this).data('move')+']').offset().top;
+
+		$(window).on('resize', function(){
+			posBlock = $('.js-to-move[data-move='+$(this).data('move')+']').offset().top;
+		});
+		
+		$('html, body').animate({ scrollTop: posBlock }, 600);
+	});
+}
+
+// Нестандартный select
+if ($('.js-select').length) {
+	$('.js-select').select2({
+		width: '100%',
+		minimumResultsForSearch: Infinity,
+		placeholder: function(){
+			$(this).attr('data-placeholder');
+		},
+	});
+}
