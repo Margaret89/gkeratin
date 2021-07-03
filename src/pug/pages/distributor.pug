@@ -1,0 +1,174 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Дистрибьюторам';
+	- var h1 = 'Дистрибьюторам';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Дистрибьюторам'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	.distributor
+		section.distributor-top
+			.container
+				.row
+					.col-12
+						.dist-adv
+							.dist-adv__content
+								.dist-adv__title Открой возможность 
+									b Стань представителем GKHAIR RUSSIA
+
+							.dist-adv__img
+								img(src="assets/img/distributor.png", alt="")
+
+						.distributor-top__desc Кератиновое выпрямление и восстановление волос на сегодняшний день популярно не только в центральных крупных городах России, но и даже в самых удаленных и небольших населенных пунктах.
+
+		section.distributor-desc
+			.container
+				.row
+					.col-lg-7
+						h3 Бренд GKhair Professional – это полный спектр продукции для здоровья и красоты волос
+				
+				.row
+					.col-12
+						ul.list-col
+							li botox
+							li plazma
+							li тотальная реконструкция
+							li ice shine
+							li deep conditioner + the best
+							li deep conditioner( GKhair)/deep mask(Innovatis)
+							li hot miami bombshell/маски Miami bombshell
+			
+				.row
+					.col-lg-7
+						p Компания GKhair Russia ищет представителей в регионах. С нами вы можете стать дистрибьютором косметики премиум класса.
+	
+		section.distributor-advant
+			.container
+				.row
+					.col-12
+						h3 В чем ваша выгода от сотрудничества с нами:
+				
+				.dist-advant-list
+					.row
+						-
+							var list=[
+								{img:'dist-advant1.png', title:'Высокий доход с продажи косметических средств и аксессуаров', text:'Вы будете иметь возможность закупать продукцию по сниженным ценам + дополнительный доход за счет снижения себестоимости процедур в Вашем салоне.'},
+								{img:'dist-advant2.png', title:'Возможность создания обучающего центра', text:'Вы сможете проводить собственные семинары и тренинги по введению услуги в салонах красоты Вашего региона.'},
+								{img:'dist-advant3.png', title:'Бесплатная реклама', text:'Информация о вас и ваши контактные данные будут размещены на нашем сайте. Кроме того, вы получаете свой персональный сайт, который ежедневно будет обеспечиват Вас клиентами!'},
+							]
+
+						each item in list
+							.col-md-4
+								.dist-advant
+									.dist-advant__img(style="background-image: url(assets/img/"+item.img+")")
+
+									.dist-advant__content
+										.dist-advant__title= item.title
+										.dist-advant__text= item.text
+		
+		section.note-block.bg-grey
+			.container
+				.row
+					.col-12
+						.note-block__content
+							.note-block__img
+								img(src="assets/img/tick.png", alt="")
+							
+							.note-block__text Наша компания является официальным дистрибьютором бренда GKhair (Global keratin) на территории РФ. Продукция ввозится на территорию РФ официально, с полной таможенной очисткой. Весь товар сертифицирован. Вы всегда можете проверить эту информацию в реестре ФТС.
+	
+		section.guarantee
+			.container
+				.row
+					.col-lg-6
+						h3 5 гарантий успеха: почему выбирают именно нас:
+				
+				.row
+					.col-12
+						.guarantee-list
+							-
+								var list=[
+									{num:'1', text:'Вся наша продукция проходит обязательную сертификацию в России. Копии сертификатов высылаются с заказом по желанию клиента. Все товары ввозятся официально на территорию России.'},
+									{num:'2', text:'Обучение мастеров и технологов, проведение он-лайн и офф-лайн семинаров по использованию продукции, рекомендации по развитию собственной сети продаж в регионах.'},
+									{num:'3', text:'Наши партнеры получают своего личного менеджера-консультанта, который всегда на связи. Он ответит на все ваши вопросы.'},
+									{num:'4', text:'Со всеми партнерами мы работаем официально по Договору, в котором оговариваются условия сотрудничества, территория, сроки поставки продукции.'},
+									{num:'5', text:'Каждому нашему дистрибьютору (на начальном этапе сотрудничества) мы даем возможность "разогнаться" (необязательно заказывать продукцию единоразово — можно сделать несколько заказов на общую сумму)'},
+								]
+							each item in list
+								.guarantee-list__item
+									.guarantee-list__num= item.num
+									.guarantee-list__text= item.text
+
+		section.distributor-about
+			.container
+				.row
+					.col-12
+						h3 Кого мы хотим видеть среди наших партнеров:
+				
+				.row
+					.col-md-7.col-lg-6.order-2.order-md-1
+						ul
+							li Ваша компания занимается оптово-розничной торговлей профессиональных средств для салонов красоты и парикмахерских.
+							li У вас уже имеется база клиентов в своем городе, занимающаяся в сфере индустрии красоты.
+							li У вас есть технолог или вы готовы взять в штат профессионального мастера – консультанта.
+							li Вы можете выделить достаточно оборудованную площадь для проведения семинаров и тренингов.
+							li Вы готовы участвовать в тематических выставках индустрии красоты.
+							li Вы целеустремлены, активны и хотите иметь большой ежемесячный доход и готовы развивать бизнес вместе с нами!
+					
+					.col-md-5.offset-lg-1.col-lg-4.order-1.order-md-2
+						.distributor-about__img(style="background-image: url(assets/img/man.png)")
+
+	section.bg-grey.form-page
+		.container
+			.row
+				.col-12
+					form.form-site
+						.form-site__info
+							.form-site__title Стать дистрибьютером
+
+							.form-site__text
+								p Заполните форму заявки если вы готовы стать нашим партнером. В сообщении обязательно укажите ваш город и сферу деятельности.
+
+								p После рассмотрения заявки наш менеджер свяжется с вами и вышлет подробные условия для того, чтобы стать дистрибьютором и прайс на электронную почту.
+
+						.form-site__content
+							.form-site__fields
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Ваше имя", value="Алексан")
+
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Город")
+
+								.form-site__item.form-site__item_half
+									input.js-phone(type="text", placeholder="Ваш телефон")
+
+								.form-site__item.form-site__item_half
+									select.js-select(data-placeholder="Мастер")
+										option
+										option(value="Ученик") Ученик
+										option(value="Мастер2") Мастер2
+
+								.form-site__item
+									input.js-phone(type="email", placeholder="Эл. почта")
+
+								.form-site__item
+									textarea(placeholder="Доп. информация")
+
+							.form-site__polit
+								.input-check
+									input#polit(type='checkbox', checked="checked")
+									label.input-check__label(for='polit')
+										span.input-check__mark
+											+svg('ic-tick','ic-tick', '10', '8')
+										span.input-check__text Я согласен на обработку 
+											a(href="#") персональных данных
+
+							.form-site__btn
+								button.btn.btn_border Записаться
