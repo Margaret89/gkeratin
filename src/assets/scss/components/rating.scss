@@ -16,3 +16,32 @@
 		left: 0;
 	}
 }
+
+.rating-area{
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+
+	input{display: none;}
+
+	&__item{
+		float: right;
+		cursor: pointer;
+	}
+
+	&__item:not(:last-child){margin-left: 6px;}
+
+	.icon{
+		fill: #dbdbdb;
+		transition: fill 0.2s ease 0s;
+	}
+
+	label:hover .icon,
+	label:hover ~label .icon,
+	input:checked ~ label .icon,
+	input:checked ~ label:hover .icon,
+	input:checked ~ label:hover ~ label .icon,
+	label:hover ~ input:checked ~ label .icon{
+		fill: $color-orange;
+	}
+}

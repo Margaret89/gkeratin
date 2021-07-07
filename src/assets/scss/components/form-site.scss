@@ -74,6 +74,18 @@
 	&__btn{margin-top: 17px;}
 }
 
+.form-rating{
+	display: flex;
+	align-items: center;
+	height: 6rem;
+	@include font(normal, normal, 1.6rem, 5.8rem, $color-grey);
+	padding: 0 24px;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+
+	&__title{margin-right: 10px;}
+}
+
 .form-page{
 	padding: 80px 0;
 	margin-top: 80px;

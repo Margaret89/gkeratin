@@ -118,8 +118,8 @@ button.btn{
 
 	&:hover {
 		color: #fff;
-		border-color: $color-dark-orange;
-		box-shadow: inset 0 -6.8rem 0 0 $color-dark-orange;
+		border-color: $color-light-orange;
+		box-shadow: inset 0 -6.8rem 0 0 $color-light-orange;
 	}
 }
 
@@ -172,6 +172,17 @@ button.btn_small{
 	min-width: auto;
 	font-size: 1.6rem;
 	line-height: 4.2rem;
+}
+
+.btn.done{
+	background: #fccc2d;
+	border-color: #fccc2d;
+}
+
+.btn.done:hover{
+	color: #000;
+	border-color: #fcd965;
+	box-shadow: inset 0 -6.8rem 0 0 #fcd965;
 }
 
 

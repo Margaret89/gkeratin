@@ -173,7 +173,71 @@ block content
 								.unwrap-block__btn
 									+svg('ic-arrow-down','ic-arrow-down', '20', '10')
 
-							.unwrap-block__content.js-unwrap-content Отзывы
+							.unwrap-block__content.js-unwrap-content
+								.review
+									.review__list
+										-
+											var list=[
+												{img:'ava1.jpg', name:'Инна', date:'26 ноября 2021', rating:'80', text:'Я сама себе делала кератирование этим препаратом и у меня все отлично получилось без всяких парикмахерских. Посмотрела видео в ютубе как наносить и т.д. У меня волнистый пористый до пояса волос. После процедуры ровный и блестящий! Я очень довольна результатом)'},
+												{img:'ava2.jpg', name:'Юлия', date:'6 мая 2021', rating:'60', text:'У меня тонкий волос от природы, а с помощью этого средства каждая волосинка как будто стала объемнее. Уже после первого применения волосы заметно восстановились и идеально ровные и блестящие.'},
+												{img:'empty', name:'Светлана', date:'17 апреля 2020', rating:'40', text:'Каждый уважающий себя стилист должен иметь данное средство. Качество превосходит ожидания. А если ещё и пофантазировать...'},
+											]
+										each item in list
+											.review__item
+												.review__data
+													.review__img(style=item.img!='empty'?'background-image: url(assets/img/'+item.img+')':'')
+														if(item.img == 'empty')
+															+svg('ic-person','ic-person', '20', '24')
+													
+													.review__info
+														.review__name= item.name
+														.review__date= item.date
+
+														.rating
+															.rating__content(style="width: "+item.rating+"%")
+
+												.review__text= item.text
+
+									.review__form
+										form.form-site
+											.form-site__info
+												.form-site__title Оставить отзыв
+
+											.form-site__content
+												.form-site__fields
+													.form-site__item.form-site__item_half.order-1
+														input(type="text", placeholder="Ваше имя")
+
+													.form-site__item.form-site__item_half.order-3.order-md-2
+														.form-rating
+															.form-rating__title Рейтинг:
+
+															.rating-area
+																-
+																	var list=['5','4','3','2','1'];
+																
+																each item, index in list
+																	if(index == 4)
+																		input(type='radio' name='rating' value=item, id='star-'+item, required='required')
+																	else
+																		input(type='radio' name='rating' value=item, id='star-'+item)
+																	label.rating-area__item(for='star-'+item title=item)
+																		+svg('ic-star','ic-star', '16', '16')
+
+													.form-site__item.order-2.order-md-3
+														textarea(placeholder="Комментарий")
+
+												.form-site__polit
+													.input-check
+														input#polit(type='checkbox', checked="checked")
+														label.input-check__label(for='polit')
+															span.input-check__mark
+																+svg('ic-tick','ic-tick', '10', '8')
+															span.input-check__text Я согласен на обработку 
+																a(href="#") персональных данных
+
+												.form-site__btn
+													button.btn.btn_border Отправить
 
 						.unwrap-block.js-unwrap-block
 							.unwrap-block__head.js-unwrap-head
