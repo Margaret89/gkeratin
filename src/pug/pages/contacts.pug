@@ -1,0 +1,127 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+	- var h1 = 'Контакты';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'Контакты'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	.contacts
+		.container
+			.row
+				.col-md-5
+					.contact-item
+						.contact-item__label Название
+						.contact-item__text ООО ГКератин (GKeratin LTD)
+
+					.contact-item
+						.contact-item__label Адрес
+						.contact-item__text Адрес: Санкт-Петербург, м. Сенная, ул. Ефимова, 4а, БЦ&nbsp;офис&nbsp;209
+
+					.contact-item
+						.contact-item__label Как добраться
+						.contact-item__text
+							b На общественном транспорте:
+							br
+							|от станции метро "Сенная/Спасская" пешком 3 минуты по улице Ефимова.
+							br
+							br
+							b На машине:
+							br
+							|из центра города по улице Садовая до Сенной площади, после - поворот на Ефимова.
+
+					.contact-item
+						.contact-item__label Телефон
+						.contact-item__text
+							b 
+								a(href="tel:+78005050984") 8 (800) 505-09-84
+							|— звонок по России бесплатный!
+							br
+							b
+								a(href="tel:+78124383138") 8 (812) 438-31-38
+							br
+							b
+								a(href="tel:+79523741444") 8 (952) 374-14-44
+							
+
+					.contact-item
+						.contact-item__label Режим работы
+						.contact-item__text Пн. — Пт.
+							br
+							|с 10:00 до 19:00
+
+
+				.offset-md-1.col-md-5.d-flex.flex-column
+					.contact-img.contact-img_empty.order-2.order-md-0
+						img(src="assets/img/no-photo.png", alt="")
+
+					.contact-item
+						.contact-item__label WhatsApp Business
+						.contact-item__text
+							a(href="https://wa.me/79523741444") +7952-374-14-44
+							br
+							br
+							br
+
+					.contact-item
+						.contact-item__label Эл. почта
+						.contact-item__text
+							a(href="mailto:info@gkeratin.ru") info@gkeratin.ru
+
+	section.bg-grey.form-page
+		.container
+			.row
+				.col-12
+					form.form-site
+						.form-site__info
+							.form-site__desc
+								.form-site__title Запроси прайс на продукцию GKhair
+
+								.form-site__text
+									p Обязательно укажите кто вы: представитель салона или частный клиент
+
+							.form-site__img.d-none.d-lg-block
+								img(src="assets/img/gk-form.png", alt="")
+
+						.form-site__content
+							.form-site__fields
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Ваше имя", value="Алексан")
+
+								.form-site__item.form-site__item_half
+									input(type="text", placeholder="Город")
+
+								.form-site__item.form-site__item_half
+									input.js-phone(type="text", placeholder="Ваш телефон")
+
+								.form-site__item.form-site__item_half
+									select.js-select(data-placeholder="Мастер")
+										option
+										option(value="Ученик") Ученик
+										option(value="Мастер2") Мастер2
+
+								.form-site__item
+									input.js-phone(type="email", placeholder="Эл. почта")
+
+								.form-site__item
+									textarea(placeholder="Доп. информация")
+
+							.form-site__polit
+								.input-check
+									input#polit(type='checkbox', checked="checked")
+									label.input-check__label(for='polit')
+										span.input-check__mark
+											+svg('ic-tick','ic-tick', '10', '8')
+										span.input-check__text Я согласен на обработку 
+											a(href="#") персональных данных
+
+							.form-site__btn
+								button.btn.btn_border Отправить

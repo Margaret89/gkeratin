@@ -1,0 +1,70 @@
+/*-------------- fact -----------------*/
+.fact-wrap{
+	margin: 130px 0;
+	background: url(../img/waves.png) no-repeat bottom right;
+}
+
+.fact{
+	&__item{
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__item:not(:last-child){margin-bottom: 35px;}
+
+	&__item:nth-child(2),
+	&__item:nth-child(3){
+		margin-left: 100px;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 90px;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		margin-right: 20px;
+		background: #fff;
+		box-shadow: 0px 12px 46px 0px rgba(0, 0, 0, 0.04);
+	}
+
+	&__text{
+		max-width: 200px;
+		@include font(normal, normal, 1.8rem, 1.44, $color-text);
+	}
+}
+
+@media (max-width: 991px) {
+	.fact-wrap{margin: 100px 0;}
+	
+	.fact{
+		&__item:nth-child(2),
+		&__item:nth-child(3){
+			margin-left: 50px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.fact-wrap{
+		margin: 50px 0;
+
+		&__img{
+			max-width: 300px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.fact{
+		&__item:not(:last-child){margin-bottom: 20px;}
+		
+		&__item:nth-child(2),
+		&__item:nth-child(3){
+			margin-left: 0;
+		}
+
+		&__text{font-size: 1.6rem;}
+	}
+}
