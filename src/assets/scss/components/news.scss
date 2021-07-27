@@ -1,1 +1,28 @@
 /*-------------- news -----------------*/
+.news-detail{
+	font-size: 1.8rem;
+	line-height: 1.55;
+
+	h1, .h1{max-width: 500px;}
+
+	&__img{
+		max-width: 60%;
+		float: left;
+		margin: 0 30px 30px 0;
+	}
+
+	&__btn{
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 60px;
+	}
+}
+
+@media (max-width: 767px) {
+	.news-detail{
+		&__img{
+			float: none;
+			margin: 0 0 30px 0;
+		}
+	}
+}
