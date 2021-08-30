@@ -1,0 +1,51 @@
+/*-------------- advant -----------------*/
+.advant-land-wrap{
+	margin: 160px 0;
+	background-image: url(../img/waves2.png);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	padding-top: 108px;
+
+	h2, .h2{
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-size: 4.6rem;
+		margin-bottom: 7rem;
+	}
+}
+
+.advant-land{
+	&__item{
+		height: calc(100% - 43px);
+		margin-bottom: 43px;
+		text-align: center;
+	}
+
+	&__img{margin-bottom: 24px;}
+
+	&__text{
+		@include font(normal, normal, 1.6rem, 1.5, $color-text);
+	}
+}
+
+@media (max-width: 991px) {
+	.advant-land-wrap{
+		margin: 100px 0;
+		padding-top: 80px;
+		padding-bottom: 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.advant-land-wrap{
+		margin: 50px 0;
+		padding-top: 40px;
+
+		h2, .h2{
+			font-size: 2.8rem;
+			margin-bottom: 4rem;
+		}
+	}
+}

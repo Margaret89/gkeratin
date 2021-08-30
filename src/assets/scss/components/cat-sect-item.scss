@@ -1,0 +1,65 @@
+/*-------------- cat-sect -----------------*/
+.cat-sect-land-wrap{
+	margin: 145px 0 100px;
+}
+
+.cat-sect-item{
+	display: flex;
+	justify-content: space-between;
+	height: calc(100% - 50px);
+	border-radius: 20px;
+	background: linear-gradient(to right, rgba(255,200,20,1) 0%, rgba(255,214,51,1) 100%);
+	margin-bottom: 50px;
+	text-decoration: none;
+	
+	&__content,
+	&__img{
+		max-width: 50%;
+	}
+
+	&__content{
+		padding: 42px 10px 30px 50px;
+	}
+
+	&__text{
+		@include font(normal, 300, 2.6rem, 1.2, #000);
+		transition: color 0.2s ease 0s;
+	}
+	
+	&__img{
+		margin-top: -44px;
+		margin-bottom: -35px;
+		transition: transform 0.2s ease 0s;
+	}
+
+	&:hover &__text{color: #fff;}
+	&:hover &__img{transform: scale(1.05);}
+}
+
+@media (max-width: 1279px) {
+	.cat-sect-item{
+		&__content{padding: 32px 10px 30px 40px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.cat-sect-wrap{margin: 100px 0 50px;}
+
+	.cat-sect-item{
+		&__img{
+			margin-top: -25px;
+			margin-bottom: -25px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.cat-sect-wrap{margin: 50px 0;}
+
+	.cat-sect-item{
+		&__content{padding: 22px 10px 20px 20px;}
+		&__text{font-size: 2rem;}
+	}
+
+	.spec{margin: 30px 0;}
+}
