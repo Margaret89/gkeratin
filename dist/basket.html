@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Корзина</title>
+	<link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/app.css" rel="stylesheet"></head>
+	<body class="js-body">
+		<div class="wrapper">
+			<header class="header">
+				<div class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="header-top__content">
+									<div class="header-top__info"><span class="ic-hamburger js-btn-menu d-lg-none"><span></span></span><a class="header-top__logo" href="#"><img src="assets/img/logo.png" alt=""></a>
+										<div class="social d-none d-lg-inline-flex"><a class="social__item" href="#">
+												<svg class="icon ic-instagram" width="20" height="20">
+													<use xlink:href="assets/sprites/sprite.svg#ic-instagram"></use>
+												</svg></a><a class="social__item" href="#">
+												<svg class="icon ic-vk" width="20" height="12">
+													<use xlink:href="assets/sprites/sprite.svg#ic-vk"></use>
+												</svg></a><a class="social__item" href="#">
+												<svg class="icon ic-fb" width="12" height="20">
+													<use xlink:href="assets/sprites/sprite.svg#ic-fb"></use>
+												</svg></a></div>
+										<div class="header-top__contacts js-contacts"><span class="header-top__phone"><a href="tel:+78005050984">8 (800) 505 09 84</a></span><a class="header-top__callback" data-fancybox="" data-src="#feadback-form" href="javascript:;">Заказать звонок</a></div>
+									</div>
+									<div class="header-top__action">
+										<div class="header-action">
+											<div class="header-action__item js-btn-contacts d-lg-none">
+												<div class="header-action__icon">
+													<svg class="icon ic-call" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-call"></use>
+													</svg>
+												</div>
+											</div>
+											<div class="header-action__item">
+												<div class="search-form js-search-form">
+													<div class="search-form__btn js-search-form-btn">
+														<svg class="icon ic-search" width="20" height="20">
+															<use xlink:href="assets/sprites/sprite.svg#ic-search"></use>
+														</svg>
+													</div>
+													<div class="search-form__content js-search-form-content">
+														<div class="search-form__field">
+															<input type="text" placeholder="Введите название товара">
+															<button type="submit">
+																<svg class="icon ic-search" width="20" height="20">
+																	<use xlink:href="assets/sprites/sprite.svg#ic-search"></use>
+																</svg>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div><a class="header-action__item" href="#">
+												<div class="header-action__icon">
+													<svg class="icon ic-heart" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-heart"></use>
+													</svg>
+												</div></a><a class="header-action__item" href="#">
+												<div class="header-action__icon">
+													<svg class="icon ic-cart" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-cart"></use>
+													</svg>
+													<div class="header-action__num">0</div>
+												</div></a>
+										</div>
+										<div class="header-top__auth"><a class="btn btn_border btn_small" href="#"><span class="d-lg-none">
+													<svg class="icon ic-enter" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-enter"></use>
+													</svg></span><span class="d-none d-lg-inline">Войти</span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main>
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Главная</a></li>
+								<li class="breadcrumb__item"><span>Корзина</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container page-head">
+					<div class="row">
+						<div class="col-12">
+							<h1>Корзина</h1>
+						</div>
+					</div>
+				</div>
+				<section class="basket">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<table class="table-basket">
+									<thead>
+										<tr>
+											<th class="table-basket__col-img"></th>
+											<th class="table-basket__col-title">
+												<div class="table-basket__head table-basket__head_left">Название товара</div>
+											</th>
+											<th>
+												<div class="table-basket__head">Цена</div>
+											</th>
+											<th>
+												<div class="table-basket__head">кол-во</div>
+											</th>
+											<th>
+												<div class="table-basket__head">Всего</div>
+											</th>
+											<th class="table-basket__col-del"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="table-basket__col-img"><a class="table-basket__img" href="#"><img src="assets/img/basket-big1.jpg" alt=""></a></td>
+											<td class="table-basket__col-title">
+												<div class="table-basket__title"><a href="#">Dry Oil Shine Spray GKhair 115 мл</a></div>
+											</td>
+											<td>
+												<div class="table-basket__price">1&nbsp;380&nbsp;₽</div>
+											</td>
+											<td>
+												<div class="counter counter_big">
+													<div class="counter__arr">
+														<svg class="icon ic-arrow-down" width="14" height="8">
+															<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+														</svg>
+													</div>
+													<div class="counter__field">
+														<input type="text" value="2">
+													</div>
+													<div class="counter__arr">
+														<svg class="icon ic-arrow-up" width="14" height="8">
+															<use xlink:href="assets/sprites/sprite.svg#ic-arrow-up"></use>
+														</svg>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="table-basket__price">2&nbsp;760&nbsp;₽</div>
+											</td>
+											<td class="table-basket__col-del"><span class="table-basket__del">
+													<svg class="icon ic-close" width="12" height="12">
+														<use xlink:href="assets/sprites/sprite.svg#ic-close"></use>
+													</svg></span></td>
+										</tr>
+										<tr>
+											<td class="table-basket__col-img"><a class="table-basket__img" href="#"><img src="assets/img/basket-big2.jpg" alt=""></a></td>
+											<td class="table-basket__col-title">
+												<div class="table-basket__title"><a href="#">Moisturizing Box</a></div>
+											</td>
+											<td>
+												<div class="table-basket__price">1&nbsp;380&nbsp;₽</div>
+											</td>
+											<td>
+												<div class="counter counter_big">
+													<div class="counter__arr">
+														<svg class="icon ic-arrow-down" width="14" height="8">
+															<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+														</svg>
+													</div>
+													<div class="counter__field">
+														<input type="text" value="2">
+													</div>
+													<div class="counter__arr">
+														<svg class="icon ic-arrow-up" width="14" height="8">
+															<use xlink:href="assets/sprites/sprite.svg#ic-arrow-up"></use>
+														</svg>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="table-basket__price">2&nbsp;760&nbsp;₽</div>
+											</td>
+											<td class="table-basket__col-del"><span class="table-basket__del">
+													<svg class="icon ic-close" width="12" height="12">
+														<use xlink:href="assets/sprites/sprite.svg#ic-close"></use>
+													</svg></span></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="basket-total">
+									<form class="coupon">
+										<div class="coupon__label">Введите код купона для скидки:</div>
+										<div class="coupon__content">
+											<div class="coupon__field">
+												<input type="text">
+												<button type="submit">
+													<svg class="icon ic-arr-right" width="13" height="11">
+														<use xlink:href="assets/sprites/sprite.svg#ic-arr-right"></use>
+													</svg>
+												</button>
+											</div>
+											<div class="coupon__info">
+												<div class="coupon__text">Цена со скидкой:</div>
+												<div class="coupon__price">2 350 ₽</div>
+											</div>
+										</div>
+									</form>
+									<div class="basket-total__content">
+										<div class="basket-total__res">Итого: <span class="basket-total__sum">2&nbsp;720&nbsp;₽</span></div><a class="btn btn_border btn_grey" href="#">Быстрый заказ</a><a class="btn btn_border" href="#">Оформить заказ</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="cat-list-slider-wrap">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="h1 text-center">Выберите подарок</div>
+								<div class="cat-list-slider js-cat-list-slider">
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog1.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Dry Oil Shine Spray GKhair 115 мл.</a></div>
+												<div class="cat-item__text">Сухое масло - спрей для блеска</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__price"><span class="cat-item__cur-price">0 ₽</span></div>
+											</div>
+										</div>
+										<div class="cat-item__action">
+											<div class="cat-item__btn"><a class="btn btn_border btn_small" href="#">В корзину</a></div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog2.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">VolumizeHer Spray GKhair 30 мл.</a></div>
+												<div class="cat-item__text">Спрей для создания объёма</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__price"><span class="cat-item__cur-price">0 ₽</span></div>
+											</div>
+										</div>
+										<div class="cat-item__action">
+											<div class="cat-item__btn"><a class="btn btn_border btn_small" href="#">В корзину</a></div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog3.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Moisturizing Box</a></div>
+												<div class="cat-item__text">Набор увлажняющий</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__price"><span class="cat-item__cur-price">0 ₽</span></div>
+											</div>
+										</div>
+										<div class="cat-item__action">
+											<div class="cat-item__btn"><a class="btn btn_border btn_small" href="#">В корзину</a></div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog4.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Cashmere GKhair 50 мл.</a></div>
+												<div class="cat-item__text">Крем - кашемир, сыворотка</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__price"><span class="cat-item__cur-price">0 ₽</span></div>
+											</div>
+										</div>
+										<div class="cat-item__action">
+											<div class="cat-item__btn"><a class="btn btn_border btn_small" href="#">В корзину</a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="cat-list-slider-wrap">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="h1 text-center">Персональные рекомендации</div>
+								<div class="cat-list-slider js-cat-list-slider">
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__text">хит</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog1.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Dry Oil Shine Spray GKhair 115 мл.</a></div>
+												<div class="cat-item__text">Сухое масло - спрей для блеска</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Достаточно
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">1 215 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog2.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">VolumizeHer Spray GKhair 30 мл.</a></div>
+												<div class="cat-item__text">Спрей для создания объёма</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Мало
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">580 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_green">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__text">new</div>
+												</div>
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_yellow">
+														<svg class="icon bg-sale" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sale"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-sale" width="23" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-sale"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog3.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Moisturizing Box</a></div>
+												<div class="cat-item__text">Набор увлажняющий</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Достаточно
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">2 720 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_pink">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-like" width="20" height="20">
+															<use xlink:href="assets/sprites/sprite.svg#ic-like"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog4.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Cashmere GKhair 50 мл.</a></div>
+												<div class="cat-item__text">Крем - кашемир, сыворотка</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Много
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">1 700 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_purple">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-present" width="20" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-present"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog2.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">VolumizeHer Spray GKhair 30 мл.</a></div>
+												<div class="cat-item__text">Спрей для создания объёма</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Мало
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">580 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_green">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__text">new</div>
+												</div>
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_yellow">
+														<svg class="icon bg-sale" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sale"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-sale" width="23" height="18">
+															<use xlink:href="assets/sprites/sprite.svg#ic-sale"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog3.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Moisturizing Box</a></div>
+												<div class="cat-item__text">Набор увлажняющий</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Достаточно
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">2 720 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg sticker__bg_pink">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__icon">
+														<svg class="icon ic-like" width="20" height="20">
+															<use xlink:href="assets/sprites/sprite.svg#ic-like"></use>
+														</svg>
+													</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog4.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Cashmere GKhair 50 мл.</a></div>
+												<div class="cat-item__text">Крем - кашемир, сыворотка</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Много
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">1 700 ₽</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="cat-item">
+										<div class="cat-item__img-wrap">
+											<div class="sticker">
+												<div class="sticker__item">
+													<div class="sticker__bg">
+														<svg class="icon bg-sticker" width="50" height="50">
+															<use xlink:href="assets/sprites/sprite.svg#bg-sticker"></use>
+														</svg>
+													</div>
+													<div class="sticker__text">хит</div>
+												</div>
+											</div><a class="cat-item__img" href="#"><img src="assets/img/catalog1.jpg" alt=""></a>
+										</div>
+										<div class="cat-item__content">
+											<div class="cat-item__info">
+												<div class="cat-item__title"><a href="#">Dry Oil Shine Spray GKhair 115 мл.</a></div>
+												<div class="cat-item__text">Сухое масло - спрей для блеска</div>
+											</div>
+											<div class="cat-item__bottom">
+												<div class="cat-item__status">
+													<svg class="icon ic-tick" width="10" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+													</svg>Достаточно
+												</div>
+												<div class="cat-item__price"><span class="cat-item__cur-price">1 215 ₽</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 order-2 order-md-0">
+								<div class="footer-top__logo d-none d-md-block"><a href="#"><img src="assets/img/logo.png" alt=""></a></div>
+								<div class="footer-top__slogan d-none d-md-block">Официальный дистрибьютор в России с 2011 года</div>
+								<div class="social"><a class="social__item" href="#">
+										<svg class="icon ic-instagram" width="20" height="20">
+											<use xlink:href="assets/sprites/sprite.svg#ic-instagram"></use>
+										</svg></a><a class="social__item" href="#">
+										<svg class="icon ic-vk" width="20" height="12">
+											<use xlink:href="assets/sprites/sprite.svg#ic-vk"></use>
+										</svg></a><a class="social__item" href="#">
+										<svg class="icon ic-fb" width="12" height="20">
+											<use xlink:href="assets/sprites/sprite.svg#ic-fb"></use>
+										</svg></a></div>
+								<div class="app">
+									<div class="app__item"><a href="#"><img src="assets/img/google-play.png" alt=""></a></div>
+									<div class="app__item"><a href="#"><img src="assets/img/appstore.png" alt=""></a></div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 d-none d-md-block">
+								<div class="footer-top__title">Меню</div>
+								<ul class="footer-menu">
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">О компании</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Обучение</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Дитрибьюторам</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Салонам</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Новости</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
+								</ul>
+							</div>
+							<div class="col-md-4 col-lg-3 d-none d-md-block">
+								<div class="footer-top__title">Продукция</div>
+								<ul class="footer-menu">
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Домашний уход</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Кератиновые составы</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Стайлинг</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Системы окрашивания</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Приборы и аксессуары</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Салонные процедуры</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Уход</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 d-flex justify-content-lg-end order-1 order-md-4"><a class="btn btn_border" href="#">Запросить прайс-лист</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="footer-bottom__content">
+									<div class="footer-bottom__copyright">© 2013-2021 Компания ООО "ГКератин"</div>
+									<div class="footer-bottom__link"><a href="#">Политика конфиденциальности </a>| <a href="#">Пользовательское соглашение</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="move-up js-move-up">
+				<svg class="icon ic-arrow-up" width="20" height="10">
+					<use xlink:href="assets/sprites/sprite.svg#ic-arrow-up"></use>
+				</svg>
+			</div>
+			<div id="feadback-form" style="display: none;">
+				<div class="popup-form">
+					<form class="form-site">
+						<div class="form-site__info">
+							<div class="form-site__title">Заказать обратный звонок</div>
+						</div>
+						<div class="form-site__content">
+							<div class="form-site__fields">
+								<div class="form-site__item">
+									<input type="text" placeholder="Ваше имя">
+								</div>
+								<div class="form-site__item">
+									<input class="js-phone" type="text" placeholder="Ваш телефон">
+								</div>
+							</div>
+							<div class="form-site__polit">
+								<div class="input-check">
+									<input id="polit" type="checkbox" checked="checked">
+									<label class="input-check__label" for="polit"><span class="input-check__mark">
+											<svg class="icon ic-tick" width="10" height="8">
+												<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+											</svg></span><span class="input-check__text">Я согласен на обработку <a href="#">персональных данных</a></span></label>
+								</div>
+							</div>
+							<div class="form-site__btn">
+								<button class="btn btn_border">Отправить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="assets/js/vendors.js"></script><script type="text/javascript" src="assets/js/app.js"></script></body>
+</html>

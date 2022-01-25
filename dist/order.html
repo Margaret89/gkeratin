@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Оформление заказа</title>
+	<link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/app.css" rel="stylesheet"></head>
+	<body class="js-body">
+		<div class="wrapper">
+			<header class="header">
+				<div class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="header-top__content">
+									<div class="header-top__info"><span class="ic-hamburger js-btn-menu d-lg-none"><span></span></span><a class="header-top__logo" href="#"><img src="assets/img/logo.png" alt=""></a>
+										<div class="social d-none d-lg-inline-flex"><a class="social__item" href="#">
+												<svg class="icon ic-instagram" width="20" height="20">
+													<use xlink:href="assets/sprites/sprite.svg#ic-instagram"></use>
+												</svg></a><a class="social__item" href="#">
+												<svg class="icon ic-vk" width="20" height="12">
+													<use xlink:href="assets/sprites/sprite.svg#ic-vk"></use>
+												</svg></a><a class="social__item" href="#">
+												<svg class="icon ic-fb" width="12" height="20">
+													<use xlink:href="assets/sprites/sprite.svg#ic-fb"></use>
+												</svg></a></div>
+										<div class="header-top__contacts js-contacts"><span class="header-top__phone"><a href="tel:+78005050984">8 (800) 505 09 84</a></span><a class="header-top__callback" data-fancybox="" data-src="#feadback-form" href="javascript:;">Заказать звонок</a></div>
+									</div>
+									<div class="header-top__action">
+										<div class="header-action">
+											<div class="header-action__item js-btn-contacts d-lg-none">
+												<div class="header-action__icon">
+													<svg class="icon ic-call" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-call"></use>
+													</svg>
+												</div>
+											</div>
+											<div class="header-action__item">
+												<div class="search-form js-search-form">
+													<div class="search-form__btn js-search-form-btn">
+														<svg class="icon ic-search" width="20" height="20">
+															<use xlink:href="assets/sprites/sprite.svg#ic-search"></use>
+														</svg>
+													</div>
+													<div class="search-form__content js-search-form-content">
+														<div class="search-form__field">
+															<input type="text" placeholder="Введите название товара">
+															<button type="submit">
+																<svg class="icon ic-search" width="20" height="20">
+																	<use xlink:href="assets/sprites/sprite.svg#ic-search"></use>
+																</svg>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div><a class="header-action__item" href="#">
+												<div class="header-action__icon">
+													<svg class="icon ic-heart" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-heart"></use>
+													</svg>
+												</div></a><a class="header-action__item" href="#">
+												<div class="header-action__icon">
+													<svg class="icon ic-cart" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-cart"></use>
+													</svg>
+													<div class="header-action__num">0</div>
+												</div></a>
+										</div>
+										<div class="header-top__auth"><a class="btn btn_border btn_small" href="#"><span class="d-lg-none">
+													<svg class="icon ic-enter" width="20" height="20">
+														<use xlink:href="assets/sprites/sprite.svg#ic-enter"></use>
+													</svg></span><span class="d-none d-lg-inline">Войти</span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<navbar class="header-nav js-header-nav">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<nav class="main-menu">
+									<ul class="main-menu__list">
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">О бренде
+												<div class="main-menu__arr d-lg-none js-main-menu-arr">
+													<svg class="icon ic-arrow-down" width="14" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+													</svg>
+												</div></a>
+											<ul class="main-menu__sub js-main-menu-sub">
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">О нас</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Записаться в салон</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">О Juvexin</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">История бренда</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Кератин для волос</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Наши преимущества</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Кератиновое выпрямление</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">История кератина</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Новости</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Вакансии</a></li>
+												<li class="main-menu__sub-item"><a class="main-menu__sub-link" href="#">Реквизиты</a></li>
+											</ul>
+										</li>
+										<li class="main-menu__item active main-menu__item_no-pos"><a class="main-menu__link js-main-menu-link" href="#">Каталог
+												<div class="main-menu__arr d-lg-none js-main-menu-arr">
+													<svg class="icon ic-arrow-down" width="14" height="8">
+														<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+													</svg>
+												</div></a>
+											<div class="main-menu-cat-wrap js-main-menu-sub">
+												<div class="main-menu-cat">
+													<div class="main-menu-cat__sect">
+														<div class="main-menu-cat__title d-none d-lg-block">Домашняя серия</div>
+														<ul class="main-menu-cat__list">
+															<li class="main-menu-cat__item"><a class="main-menu-cat__link js-main-menu-link" href="#">Домашний уход
+																	<div class="main-menu-cat__arr js-main-menu-arr d-lg-none">
+																		<svg class="icon ic-arrow-down" width="14" height="8">
+																			<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+																		</svg>
+																	</div></a>
+																<ul class="main-menu-cat__sub js-main-menu-sub">
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Шампуни и кондиционеры</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Маски c кератином</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Сыворотки</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Спреи</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Тонирующие продукты</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Стайлинг</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Наборы GKBox</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Подарочные карты</a></li>
+																</ul>
+															</li>
+															<li class="main-menu-cat__item"><a class="main-menu-cat__link js-main-menu-link" href="#">Приборы и аксессуары для волос
+																	<div class="main-menu-cat__arr js-main-menu-arr d-lg-none">
+																		<svg class="icon ic-arrow-down" width="14" height="8">
+																			<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+																		</svg>
+																	</div></a>
+																<ul class="main-menu-cat__sub js-main-menu-sub">
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Техника</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Расчески</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Аксессуары</a></li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+													<div class="main-menu-cat__sect">
+														<div class="main-menu-cat__title d-none d-lg-block">Профессиональная серия</div>
+														<ul class="main-menu-cat__list">
+															<li class="main-menu-cat__item"><a class="main-menu-cat__link js-main-menu-link" href="#">Кератиновое выпрямление и восстановление
+																	<div class="main-menu-cat__arr js-main-menu-arr d-lg-none">
+																		<svg class="icon ic-arrow-down" width="14" height="8">
+																			<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+																		</svg>
+																	</div></a>
+																<ul class="main-menu-cat__sub js-main-menu-sub">
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Классические кератиновые составы</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Составы на основе глиоксиловой кислоты</a></li>
+																</ul>
+															</li>
+															<li class="main-menu-cat__item"><a class="main-menu-cat__link js-main-menu-link" href="#">Система окрашивания
+																	<div class="main-menu-cat__arr js-main-menu-arr d-lg-none">
+																		<svg class="icon ic-arrow-down" width="14" height="8">
+																			<use xlink:href="assets/sprites/sprite.svg#ic-arrow-down"></use>
+																		</svg>
+																	</div></a>
+																<ul class="main-menu-cat__sub js-main-menu-sub">
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Краситель Cream Color</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Осветляющие продукты</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Оксиды</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Защитная добавка</a></li>
+																	<li class="main-menu-cat__sub-item"><a class="main-menu-cat__sub-link" href="#">Защита цвета</a></li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="product-menu d-none d-lg-block">
+													<div class="product-menu__img" style="background-image: url(assets/img/product-menu.jpg);">
+														<div class="product-menu__label">new</div>
+													</div>
+													<div class="product-menu__content">
+														<div class="product-menu__name"><a href="#">GKbox "Кератиновый уход дома"</a></div>
+														<div class="product-menu__desc">Набор предназначен для восстановления хрупких, повреждённых, лишенных блеска и плотности волос.</div>
+														<div class="product-menu__btn"><a class="btn btn_border btn_small" href="#">В корзину</a>
+															<div class="product-menu__wish">
+																<svg class="icon ic-heart" width="20" height="20">
+																	<use xlink:href="assets/sprites/sprite.svg#ic-heart"></use>
+																</svg>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Подкатегории</a>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Категории</a>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Обучение</a>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Салонам</a>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Дилерам</a>
+										</li>
+										<li class="main-menu__item"><a class="main-menu__link js-main-menu-link" href="#">Контакты</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</navbar>
+			</header>
+			<main>
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Главная</a></li>
+								<li class="breadcrumb__item"><span>Оформление заказа</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container page-head">
+					<div class="row">
+						<div class="col-12">
+							<h1>Оформление заказа</h1>
+						</div>
+					</div>
+				</div>
+				<section class="order-page">
+					<form class="order">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-8 col-xl-9 order-2 order-lg-1">
+									<div class="order__sect">
+										<div class="order__title">Войдите или зарегистрируйтесь</div>
+										<div class="order__content">
+											<div class="order-auth">
+												<div class="order-auth__fields">
+													<div class="order__item">
+														<div class="order__field">
+															<input class="js-phone" type="text" value="+7 (495) 000-00-00">
+														</div>
+													</div>
+													<div class="order__item">
+														<div class="order__field">
+															<input type="text" placeholder="Введите код подтверждения">
+														</div>
+													</div><a class="btn btn_border" href="#">Подтвердить</a>
+												</div>
+												<div class="soc-block">
+													<div class="soc-block__label">Войти через соц. сети:</div>
+													<div class="soc-block__list"><a class="soc-block__item soc-block__item_fb" href="#">
+															<svg class="icon ic-fb" width="12" height="20">
+																<use xlink:href="assets/sprites/sprite.svg#ic-fb"></use>
+															</svg></a><a class="soc-block__item soc-block__item_vk" href="#">
+															<svg class="icon ic-vk" width="20" height="12">
+																<use xlink:href="assets/sprites/sprite.svg#ic-vk"></use>
+															</svg></a><a class="soc-block__item soc-block__item_in" href="#">
+															<svg class="icon ic-instagram" width="20" height="20">
+																<use xlink:href="assets/sprites/sprite.svg#ic-instagram"></use>
+															</svg></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__sect">
+										<div class="order__title">Регион доставки</div>
+										<div class="order__content">
+											<div class="order__delivery">
+												<div class="order__item">
+													<div class="order__label">Тип плательщика</div>
+													<div class="order__field">
+														<div class="btn-radio-list">
+															<div class="btn-radio">
+																<input type="radio" id="person1" checked="checked" name="person">
+																<label class="btn-radio__label" for="person1">Физическое лицо</label>
+															</div>
+															<div class="btn-radio">
+																<input type="radio" id="person2" name="person">
+																<label class="btn-radio__label" for="person2">Юридическое лицо</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="order__item">
+													<div class="order__label">Местоположение</div>
+													<div class="order__field">
+														<div class="btn-radio-list">
+															<div class="btn-radio">
+																<input type="radio" id="city1" checked="checked" name="city">
+																<label class="btn-radio__label" for="city1">Санкт-Петербург</label>
+															</div>
+															<div class="btn-radio">
+																<input type="radio" id="city2" name="city">
+																<label class="btn-radio__label" for="city2">Москва</label>
+															</div>
+														</div>
+														<div class="order__search">
+															<input type="text" placeholder="Санкт-Петербург, Ленинградская область, Северо-Запад, Россия">
+														</div>
+													</div>
+												</div>
+												<div class="order__item order__item_half">
+													<div class="order__label">Индекс</div>
+													<div class="order__field">
+														<input type="text" value="190000">
+													</div>
+												</div>
+												<div class="order__note">Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__sect">
+										<div class="order__title">Доставка</div>
+										<div class="order__content">
+											<div class="order-delivery">
+												<div class="order-delivery__item">
+													<input type="radio" id="delivery0" checked="checked" name="delivery">
+													<div class="order-delivery__icon">
+														<div class="input-check">
+															<label class="input-check__label" for="delivery0"><span class="input-check__mark">
+																	<svg class="icon ic-tick" width="10" height="8">
+																		<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																	</svg></span></label>
+														</div>
+													</div>
+													<div class="order-delivery__content">
+														<div class="order-delivery__info">
+															<div class="order-delivery__title">Бесконтактная курьерская доставка</div>
+															<div class="order-delivery__text">Доставка осуществляется в течение 1-2 дня в удобное для вас время.</div>
+														</div>
+														<div class="order-delivery-param">
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Стоимость: </span><span class="order-delivery-param__val"><b>200</b> руб.</span></div>
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Срок доставки: </span><span class="order-delivery-param__val">от <b>1</b> до <b>2</b> дней</span></div>
+														</div>
+													</div>
+												</div>
+												<div class="order-delivery__item">
+													<input type="radio" id="delivery1" name="delivery">
+													<div class="order-delivery__icon">
+														<div class="input-check">
+															<label class="input-check__label" for="delivery1"><span class="input-check__mark">
+																	<svg class="icon ic-tick" width="10" height="8">
+																		<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																	</svg></span></label>
+														</div>
+													</div>
+													<div class="order-delivery__content">
+														<div class="order-delivery__info">
+															<div class="order-delivery__title">Доставка курьером</div>
+															<div class="order-delivery__text">Доставка осуществляется в течение 1-2 дня в удобное для вас время.</div>
+														</div>
+														<div class="order-delivery-param">
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Стоимость: </span><span class="order-delivery-param__val"><b>200</b> руб.</span></div>
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Срок доставки: </span><span class="order-delivery-param__val">от <b>1</b> до <b>2</b> дней</span></div>
+														</div>
+													</div>
+												</div>
+												<div class="order-delivery__item">
+													<input type="radio" id="delivery2" name="delivery">
+													<div class="order-delivery__icon">
+														<div class="input-check">
+															<label class="input-check__label" for="delivery2"><span class="input-check__mark">
+																	<svg class="icon ic-tick" width="10" height="8">
+																		<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																	</svg></span></label>
+														</div>
+													</div>
+													<div class="order-delivery__content">
+														<div class="order-delivery__info">
+															<div class="order-delivery__title">СДЭК (Самовывоз)</div>
+															<div class="order-delivery__text">Доставка курьерской службой СДЭК.</div>
+														</div>
+														<div class="order-delivery-param">
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Стоимость: </span><span class="order-delivery-param__val"><b>200</b> руб.</span></div>
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Срок доставки: </span><span class="order-delivery-param__val">от <b>1</b> до <b>2</b> дней</span></div>
+														</div>
+													</div>
+												</div>
+												<div class="order-delivery__item">
+													<input type="radio" id="delivery3" name="delivery">
+													<div class="order-delivery__icon">
+														<div class="input-check">
+															<label class="input-check__label" for="delivery3"><span class="input-check__mark">
+																	<svg class="icon ic-tick" width="10" height="8">
+																		<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																	</svg></span></label>
+														</div>
+													</div>
+													<div class="order-delivery__content">
+														<div class="order-delivery__info">
+															<div class="order-delivery__title">Самовывоз из магазина</div>
+															<div class="order-delivery__text">Вы можете самостоятельно забрать заказ из нашего магазина с 10-00 до 19-00 ежедневно, кроме выходных, Санкт-Петербург, ул. Ефимова, 4а м. Сенная, БЦ, 1 этаж офис 209</div>
+														</div>
+														<div class="order-delivery-param">
+															<div class="order-delivery-param__item"><span class="order-delivery-param__label">Стоимость: </span><span class="order-delivery-param__val"><b>0</b> руб.</span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__sect">
+										<div class="order__title">Оплата</div>
+										<div class="order__content">
+											<div class="card-radio-list">
+												<div class="card-radio">
+													<input type="radio" id="card0" checked="checked" name="payment">
+													<label class="card-radio__label" for="card0">
+														<div class="card-radio__img"><img src="assets/img/money.png" alt=""></div>
+														<div class="card-radio__content"><span class="card-radio__mark">
+																<svg class="icon ic-tick" width="10" height="8">
+																	<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																</svg></span><span class="card-radio__text">Наличные курьеру</span></div>
+													</label>
+												</div>
+												<div class="card-radio">
+													<input type="radio" id="card1" name="payment">
+													<label class="card-radio__label" for="card1">
+														<div class="card-radio__img"><img src="assets/img/robokassa.png" alt=""></div>
+														<div class="card-radio__content"><span class="card-radio__mark">
+																<svg class="icon ic-tick" width="10" height="8">
+																	<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+																</svg></span><span class="card-radio__text">RoboKassa</span></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__sect">
+										<div class="order__title">Покупатель</div>
+										<div class="order__content">
+											<div class="order__list">
+												<div class="order__item order__item_half">
+													<div class="order__field">
+														<input type="text" placeholder="ФИО">
+													</div>
+												</div>
+												<div class="order__item order__item_half">
+													<div class="order__field">
+														<input type="email" placeholder="E-mail">
+													</div>
+												</div>
+												<div class="order__item">
+													<div class="order__field">
+														<input class="js-phone" type="text" placeholder="Телефон">
+													</div>
+												</div>
+												<div class="order__item">
+													<div class="order__field">
+														<textarea placeholder="Адрес доставки"></textarea>
+													</div>
+												</div>
+												<div class="order__item">
+													<div class="order__field">
+														<textarea placeholder="Комментарий к заказу"></textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__sect">
+										<div class="order__title">Товары в заказе</div>
+										<div class="order__content">
+											<table class="table-basket table-basket_small">
+												<tbody>
+													<tr>
+														<td class="table-basket__col-img"><a class="table-basket__img" href="#"><img src="assets/img/basket-big1.jpg" alt=""></a></td>
+														<td class="table-basket__col-title">
+															<div class="table-basket__title"><a href="#">Расческа GKhair Vent Brush 3.5</a></div>
+														</td>
+														<td>
+															<div class="table-basket__count">1 шт.</div>
+														</td>
+														<td>
+															<div class="table-basket__price">1&nbsp;380&nbsp;₽</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="table-basket__col-img"><a class="table-basket__img" href="#"><img src="assets/img/basket-big2.jpg" alt=""></a></td>
+														<td class="table-basket__col-title">
+															<div class="table-basket__title"><a href="#">VolumizeHer Spray 30 мл</a></div>
+														</td>
+														<td>
+															<div class="table-basket__count">1 шт.</div>
+														</td>
+														<td>
+															<div class="table-basket__price">1&nbsp;380&nbsp;₽</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-3 order-1 order-lg-2">
+									<div class="order-res">
+										<div class="order-res__title">
+											<svg class="icon ic-cart" width="20" height="20">
+												<use xlink:href="assets/sprites/sprite.svg#ic-cart"></use>
+											</svg>Ваш заказ
+										</div>
+										<div class="order-res__list">
+											<div class="order-res__item">
+												<div class="order-res__label">Товаров на:</div>
+												<div class="order-res__price">
+													<div class="order-res__cur-price">1 909.50 ₽</div>
+													<div class="order-res__old-price">2 140.00 ₽</div>
+												</div>
+											</div>
+											<div class="order-res__item">
+												<div class="order-res__label">Доставка:</div>
+												<div class="order-res__price">
+													<div class="order-res__cur-price">200 ₽</div>
+												</div>
+											</div>
+											<div class="order-res__item">
+												<div class="order-res__label">Экономия:</div>
+												<div class="order-res__price">
+													<div class="order-res__cur-price order-res__cur-price_green">100.50 ₽</div>
+												</div>
+											</div>
+											<div class="order-res__item">
+												<div class="order-res__label">Итого:</div>
+												<div class="order-res__price">
+													<div class="order-res__cur-price">2 109.50 ₽</div>
+												</div>
+											</div>
+										</div>
+										<div class="coupon">
+											<div class="coupon__label">Применить купон:</div>
+											<div class="coupon__content">
+												<div class="coupon__field">
+													<input type="text">
+													<button type="submit">
+														<svg class="icon ic-arr-right" width="13" height="11">
+															<use xlink:href="assets/sprites/sprite.svg#ic-arr-right"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 order-2 order-md-0">
+								<div class="footer-top__logo d-none d-md-block"><a href="#"><img src="assets/img/logo.png" alt=""></a></div>
+								<div class="footer-top__slogan d-none d-md-block">Официальный дистрибьютор в России с 2011 года</div>
+								<div class="social"><a class="social__item" href="#">
+										<svg class="icon ic-instagram" width="20" height="20">
+											<use xlink:href="assets/sprites/sprite.svg#ic-instagram"></use>
+										</svg></a><a class="social__item" href="#">
+										<svg class="icon ic-vk" width="20" height="12">
+											<use xlink:href="assets/sprites/sprite.svg#ic-vk"></use>
+										</svg></a><a class="social__item" href="#">
+										<svg class="icon ic-fb" width="12" height="20">
+											<use xlink:href="assets/sprites/sprite.svg#ic-fb"></use>
+										</svg></a></div>
+								<div class="app">
+									<div class="app__item"><a href="#"><img src="assets/img/google-play.png" alt=""></a></div>
+									<div class="app__item"><a href="#"><img src="assets/img/appstore.png" alt=""></a></div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 d-none d-md-block">
+								<div class="footer-top__title">Меню</div>
+								<ul class="footer-menu">
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">О компании</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Обучение</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Дитрибьюторам</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Салонам</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Новости</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
+								</ul>
+							</div>
+							<div class="col-md-4 col-lg-3 d-none d-md-block">
+								<div class="footer-top__title">Продукция</div>
+								<ul class="footer-menu">
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Домашний уход</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Кератиновые составы</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Стайлинг</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Системы окрашивания</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Приборы и аксессуары</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Салонные процедуры</a></li>
+									<li class="footer-menu__item"><a class="footer-menu__link" href="#">Уход</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 d-flex justify-content-lg-end order-1 order-md-4"><a class="btn btn_border" href="#">Запросить прайс-лист</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="footer-bottom__content">
+									<div class="footer-bottom__copyright">© 2013-2021 Компания ООО "ГКератин"</div>
+									<div class="footer-bottom__link"><a href="#">Политика конфиденциальности </a>| <a href="#">Пользовательское соглашение</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="move-up js-move-up">
+				<svg class="icon ic-arrow-up" width="20" height="10">
+					<use xlink:href="assets/sprites/sprite.svg#ic-arrow-up"></use>
+				</svg>
+			</div>
+			<div id="feadback-form" style="display: none;">
+				<div class="popup-form">
+					<form class="form-site">
+						<div class="form-site__info">
+							<div class="form-site__title">Заказать обратный звонок</div>
+						</div>
+						<div class="form-site__content">
+							<div class="form-site__fields">
+								<div class="form-site__item">
+									<input type="text" placeholder="Ваше имя">
+								</div>
+								<div class="form-site__item">
+									<input class="js-phone" type="text" placeholder="Ваш телефон">
+								</div>
+							</div>
+							<div class="form-site__polit">
+								<div class="input-check">
+									<input id="polit" type="checkbox" checked="checked">
+									<label class="input-check__label" for="polit"><span class="input-check__mark">
+											<svg class="icon ic-tick" width="10" height="8">
+												<use xlink:href="assets/sprites/sprite.svg#ic-tick"></use>
+											</svg></span><span class="input-check__text">Я согласен на обработку <a href="#">персональных данных</a></span></label>
+								</div>
+							</div>
+							<div class="form-site__btn">
+								<button class="btn btn_border">Отправить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="assets/js/vendors.js"></script><script type="text/javascript" src="assets/js/app.js"></script></body>
+</html>
